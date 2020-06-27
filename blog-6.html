@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Keywords"
+      content="Postman, JMeter, Yazılım Test, Yazılım Test Otomasyonu, Postman Backend Otomasyonu, Backend API Otomasyonu, JMeter Performans Testi, JMeter Yük Testi, Assertion, Jmeter Config Element"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="icon" href="img/icon2.png" type="image/ico" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>Yazılım Test Otomasyonu</title>
+  </head>
+
+  <body>
+    <!-- Scroll To Top Button -->
+    <button onclick="scrollToTop()" id="scrollToTop" title="Yukarı çık">
+      Yukarı Çık
+    </button>
+    <!-- /Scroll To Top Button -->
+
+    <!-- Off-Canvas Menu -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="hakkımızda.html">Hakkımızda</a>
+      <a href="#bizekatil">Bize Katıl</a>
+      <a href="#iletisim">İletişim</a>
+    </div>
+    <!-- /Off-Canvas Menu -->
+    <!-- Header -->
+    <header id="header">
+      <!-- Nav -->
+      <div id="nav">
+        <div class="container">
+          <!-- Logo -->
+          <div class="nav-logo">
+            <a href="index.html">
+              <img
+                src="img/icon2.png"
+                alt="Anasayfaya git"
+                width="50"
+                height="50"
+              />
+            </a>
+          </div>
+          <!-- /Logo -->
+          <!-- Nav-Menu -->
+          <div class="nav-menu">
+            <a href="index.html" class="nav-items">Anasayfa</a>
+            <a href="softwaretesting.html" class="nav-items nav-res"
+              >Yazılım Testi</a
+            >
+            <a href="postman.html" class="nav-items active">Postman</a>
+            <a href="jmeter.html" class="nav-items nav-res">JMeter</a>
+            <div class="dropdown">
+              <button onclick="clickableDropdown()" class="dropbtn nav-items">
+                Daha Fazlası <i class="fa fa-caret-down"></i>
+              </button>
+              <div id="clickable-content" class="dropdown-content">
+                <a href="jmeter.html">JMeter</a>
+                <a href="postman.html">Postman</a>
+                <a href="softwaretesting.html">Yazılım Testi</a>
+              </div>
+            </div>
+          </div>
+          <!-- /Nav-Menu -->
+
+          <!-- Off-Canvas Menu -->
+          <div class="nav-btns">
+            <button class="aside-btn" onclick="openNav()">
+              <i class="fa fa-bars" style="color: #19c6ca;"></i>
+            </button>
+          </div>
+          <!-- Off-Canvas Menu -->
+        </div>
+      </div>
+      <!-- /Nav-->
+    </header>
+    <!-- /Header -->
+
+    <!-- section -->
+    <div class="section">
+      <div class="container-blog">
+        <h2>Postman Kurulum ve Arayüzü Hakkında Ön İzleme</h2>
+        <p>Herkese merhaba,</p>
+        <p>
+          Serinin ikinci yazısında sizlerle Postman kurulumu ve arayüzü hakkında
+          bilgiler vereceğim. Request, collection, environment, monitoring,
+          workspace, Postman console gibi kavramlara açıklık getirmeye çalıştım.
+          Keyifli bir yazı olması dileğiyle…
+        </p>
+        <p>Hadi başlayalım!</p>
+        <p>
+          Hindistanlı bir programcı ve tasarımcı olan Abhinav Asthana tarafından
+          geliştirilen
+          <strong
+            >Postman, kullanıcıların hem basit hem de karmaşık HTTP isteklerini
+            hızlı şekilde bir araya getirmelerini sağlayarak API’leri paylaşmak,
+            test etmek, geliştirmek, belgelendirmek ve monitör etmek için
+            kullanılan güçlü bir HTTP istemcisidir.</strong
+          >
+          En çok öne çıkan özelliği tüm bunlar için çok kullanışlı bir arayüz
+          sunmasıdır.
+        </p>
+        <img
+          src="img/Postman Kurulum ve Arayüzü Hakkında Ön İzleme/img-1.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Postman, her ay 6 milyondan fazla yazılım geliştirici ve 200.000’den
+          fazla şirket tarafından kullanılmaktadır. Postman, ayrıca bir Chrome
+          eklentisidir.
+        </p>
+        <p>
+          En önemli özelliklerinden biri de paylaşılabilir olmasıdır. Ekip
+          arkadaşlarınızla aynı workspace üzerinden çalışabileceğiniz gibi,
+          postman içerisindeki collection’ları export edebilir veya link
+          oluşturma özelliği sayesinde rahatlıkla paylaşabilirsiniz.
+        </p>
+        <p>
+          <strong
+            >Postman’i özel kılan bir diğer özelliği ise otomasyon yeteneğidir.
+            API’leri otomatize etmeyi kolaylaştıran tasarımı, hazır kod
+            parçaları, anlaşılabilir arayüzü ve sağladığı entegrasyonları
+            (Newman, Jenkins, Travis CI, Docker) sayesinde iyi bir otomasyon
+            aracıdır.</strong
+          >
+          Ayrıca Postman’de kodlarınızı JavaScript ve Python benzeri bir dille
+          yazabilirsiniz. JavaScript bilgisi olan her birey kolay syntax’ı
+          sayesinde Postman’e hızlıca adapte olacaktır.
+        </p>
+        <br />
+        <h3>1. Postman Kurulum ve Güncelleme</h3>
+        <h4>1.1. Postman Kurulum</h4>
+        <p>
+          Postman, macOS, Windows ve Linux işletim sistemleri için native bir
+          uygulamadır.
+          <a href="https://www.getpostman.com/downloads/"
+            >https://www.getpostman.com/downloads/</a
+          >
+          sayfasından platformunuza bağlı olarak (macOS, Windows, Linux)
+          uygulamayı indirebilirsiniz.
+        </p>
+        <img
+          src="img/Postman Kurulum ve Arayüzü Hakkında Ön İzleme/img-2.png"
+          alt=""
+        />
+        <br /><br />
+        <p>Windows için kurulum dosyasını indirin ve çalıştırın.</p>
+        <p>
+          Postman, Windows 7 ve üst sürümleri desteklemektedir. Daha eski
+          işletim sistemlerini desteklemez. Ayrıca, X86 (32 bit) ve X64 (64 bit)
+          sürümleri desteklenmektedir. Fakat Windows ARM sürümü
+          desteklenmemektedir.
+        </p>
+        <br />
+        <h4>1.2. Postman Chrome Uygulaması</h4>
+        <p>
+          Postman, bir Chrome uygulaması olarak da mevcuttur. Fakat native
+          uygulama olarak kullanılması önerilir. Postman native uygulamaları
+          Electron üzerine kuruludur ve Chrome platformunun kısıtlamalarının
+          üstesinden gelir.
+          <strong
+            >Ayrıca Postman, Chrome uygulaması için desteğini de kaldırmıştır.
+            Bunun sebepleri arasında native uygulamanın sağladığı ekstra
+            özellikler (Cookies, Proxy, Postman Console vs.) ve kullanıcı dostu
+            arayüzü sayılabilir.</strong
+          >
+        </p>
+        <p>
+          Daha önce Postman Chrome uygulamasını kullandıysanız, native
+          uygulamayı bilgisayarınıza indirip hesabınıza giriş yaptığınızda
+          otomatik olarak senkronize gerçekleşecektir.
+        </p>
+        <br />
+        <h4>1.3. Postman Güncelleme</h4>
+        <p>
+          Postman native uygulamasında (macOS, Windows ve Linux) büyük bir
+          güncelleme olduğunda, Postman’in native uygulamaları sizi
+          bilgilendirir. Diğer güncellemeler ise, ayarlar butonunda beliren bir
+          simge ile gösterilir. Simge turuncu yerine kırmızıysa, güncellemenin
+          başarısız olduğunu gösterir.
+        </p>
+        <img
+          src="img/Postman Kurulum ve Arayüzü Hakkında Ön İzleme/img-3.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          En son güncellemeyi indirmek için <strong>Update</strong> butonuna
+          tıklayın. İndirme işlemi tamamlandığında, güncellemeleri uygulamak
+          için Postman uygulamasını yeniden başlatmanızı isteyen bir bildirim
+          alırsınız. Henüz güncellemeye hazır değilseniz, uygulamanın bir
+          sonraki açılışında otomatik olarak güncelleme yapmak için
+          <strong>Later</strong> butonuna tıklayın.
+        </p>
+        <p>
+          Ayrıca <strong>Settings</strong> sayfasında bulunan
+          <strong>Update</strong> sekmesi altından ana güncellemeler için
+          otomatik indirmeyi etkinleştirebilirsiniz. Böylece Postman otomatik
+          olarak güncellemeleri ve yapılan bug fix’leri (hata düzeltmelerini)
+          indirir.
+        </p>
+        <img
+          src="img/Postman Kurulum ve Arayüzü Hakkında Ön İzleme/img-4.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          <strong>Not:</strong> Postman Chrome uygulaması kullanımdan
+          kaldırılmıştır. Hala kullanabilmemize rağmen, yeni özellikler ve hata
+          düzeltmeleri yalnızca native uygulamalarda yayınlanmaktadır. Mac,
+          Windows ve Linux işletim sistemlerinde kullanılabilen ücretsiz native
+          uygulamayı kullanmalıyız.
+          <strong
+            >Ayrıca daha önce güncellemelerde karşılaştığım sorunlar sebebiyle
+            veri kaybına uğramamak için sürekli export alınmasını
+            öneriyorum.</strong
+          >
+        </p>
+        <br />
+        <h4>1.4. Postman Arayüzü</h4>
+        <p>
+          Postman çok kullanışlı ve kolay bir arayüze sahiptir. Postman arayüzü,
+          çok pencereli (multi-window) ve çok sekmeli (multi-tab) bir arayüz
+          sunar. Arayüzün büyük bir bölümü API’lere ayrılmıştır.
+        </p>
+        <img
+          src="img/Postman Kurulum ve Arayüzü Hakkında Ön İzleme/img-5.jpeg"
+          alt=""
+        />
+        <p>
+          Yukarıdaki görselde görüldüğü gibi Postman arayüzü 3 bölümden oluşur.
+          Bunlar; sidebar, header bar ve builder olarak sınıflandırılır.
+        </p>
+        <br />
+        <h4>1.4.1. Sidebar</h4>
+        <p>
+          Sidebar, <strong>collections</strong> ve
+          <strong>history</strong> sekmesinin bulunduğu alandır. Sidebar’ın
+          genişliğini yeniden boyutlandırabilirsiniz. Bunu yapmak için sağ
+          kenarı sürüklemeniz yeterlidir.
+        </p>
+        <p>
+          <strong>Collections Sekmesi:</strong> Collection kavramı Postman’in
+          temelini oluşturmaktadır. Bu yüzden çok önemlidir. Collections sekmesi
+          altında collection’lar oluşturabilir ve yönetebilirsiniz(silme,
+          paylaşma, düzenleme vs.). Ayrıca oluşturulan collection’ların altına
+          klasör ve API’ler ekleyebilirsiniz.
+        </p>
+        <p>
+          <strong>History Sekmesi:</strong> Gönderdiğiniz bütün request’leri
+          (istek) buradan görüntüleyebilirsiniz.
+        </p>
+        <br />
+        <h4>1.4.2. Header Bar</h4>
+        <p>
+          Header bar bir çok sekmeden oluşmaktadır. Bunlar;
+          <strong
+            >new, import, runner, new window, workspaces, interceptor/proxy,
+            sync, settings, notifications, heart ve user</strong
+          >
+          sekmeleridir.
+        </p>
+        <img
+          src="img/Postman Kurulum ve Arayüzü Hakkında Ön İzleme/img-6.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          <strong>New:</strong> New butonu ile requests, collections,
+          environments, dökümantasyon(documentation), sahte sunucular (mock
+          servers) ve monitörler (monitors) oluşturulur.
+        </p>
+        <p>
+          <strong>Import:</strong> Collection’lar, environment’lar, WADL,
+          Swagger, RAML veya cURL dosyaları, direk veya link kullanılarak içe
+          aktarılır.
+        </p>
+        <p>
+          <strong>Runner:</strong> Collection veya collection altında bulunan
+          klasörlerdeki API’leri ardarda koşmamızı sağlar.
+        </p>
+        <p>
+          <strong>Workspaces:</strong> Kişisel veya takım olarak workspace’ler
+          oluşturmanızı ve yönetmenizi sağlar.
+        </p>
+        <p><strong>Proxy:</strong> Proxy ayarlarını yönetir.</p>
+        <p><strong>SYNC:</strong> Postman hesabınızın durumunu günceller.</p>
+        <p><strong>Settings:</strong> Uygulama ayarlarını yönetir.</p>
+        <p><strong>Notifications:</strong> Bildirimlerin alındığı kısımdır.</p>
+        <p>
+          <strong>User:</strong> Mevcut kullanıcıyı gösterir ve “Profile”,
+          “Account Settings” ve “Add New Account” gibi bir çok seçenek sunar.
+        </p>
+        <br />
+        <h4>1.4.3. Postman Console</h4>
+        <p>
+          Postman’da, request ve response’lara sahne arkasında neler olduğunu
+          görebilmek için konsol bulunuyor. Konsol çalıştırılan bir HTTP request
+          ve response’unu ait bütün ayrıntıları (request headers, request body,
+          response headers, response body) göstermekle birlikte logları da
+          göstermektedir. Log mesajları pre request ve test scriptleriden
+          gelmektedir.
+        </p>
+        <p>
+          Özellikle API test otomasyonu sırasında konsol ekranından akışı takip
+          etmek çok önemlidir. Böylelikle yazdığımız kodları debug edebilir
+          çıkan hataların nedenleri hızlıca görebilirsiniz.
+        </p>
+        <br />
+        <h4>1.4.4. Status Bar</h4>
+        <p>
+          Postman arayüzünün altında bulunan Status Bar bir çok kolaylık
+          sağlamaktadır. Postman konsol, klayve kısayolları, arama, sayfa düzeni
+          ve yardım sekmelerinden oluşmaktadır.
+        </p>
+        <img
+          src="img/Postman Kurulum ve Arayüzü Hakkında Ön İzleme/img-7.png"
+          alt=""
+        />
+        <br /><br />
+        <h3>2. New Button</h3>
+        <p>
+          New butonu ile yeni bir request, collection, environment, monitor,
+          documentation veya mock server oluşturabilirsiniz. New butonu altında
+          varsayılan olarak “Create New” sekmesinde açılır. Fakat bu sekmeye ek
+          olarak “Templates” ve “API Network” sekmeleri de vardır.
+        </p>
+        <img
+          src="img/Postman Kurulum ve Arayüzü Hakkında Ön İzleme/img-8.png"
+          alt=""
+        />
+        <br /><br />
+        <h4>2.1. Create a Request</h4>
+        <p>
+          Bir API çağırmak için request atmamız gerekmektedir. Aşağıdaki
+          adımları takip ederek her türlü HTTP request’ini oluşturabilirsiniz.
+        </p>
+        <ol>
+          <li>Header bar kısmında bulunan “New” butonuna tıklayın.</li>
+          <li>“Create New” sekmesinde “Request” e tıklayın.</li>
+          <li>
+            “Request Name” alanını API’nizin yaptığı işleme bağlı olarak anlamlı
+            bir şekilde isimlendirin. (Örneğin; Sign-up, sign-in, sign-out vs.)
+          </li>
+          <li>
+            Request’inizi mevcut bir collection’a kaydedin veya “Create
+            Collection” butonuna basarak yeni oluşturduğunuz collection’a
+            kaydedin.
+          </li>
+          <li>
+            “Save” butonuna basınız.
+          </li>
+        </ol>
+        <img
+          src="img/Postman Kurulum ve Arayüzü Hakkında Ön İzleme/img-9.png"
+          alt=""
+        />
+        <br /><br />
+        <h4>2.2. Create a Collection</h4>
+        <p>
+          Collection’lar Postman’in yapıtaşını oluşturmaktadır. Collection’lar
+          içerisinde klasörlerimizi ve API’lerimizi saklayabiliriz. Ayrıca
+          yazdığımız pre-request ve test scripts sayesinde test caselerimizi
+          otomatize edebilir, raporlayabilir ve Jenkins’e entegre edebiliriz.
+        </p>
+        <p>
+          Aşağıdaki adımları takip ederek bir collection oluşturabilirsiniz.
+        </p>
+        <ol>
+          <li>Header bar kısmında bulunan “New” butonuna tıklayın.</li>
+          <li>“Create New” sekmesinde “Collection” a tıklayın.</li>
+          <li>Collection’a bir anlamlı bir isim veriniz. (Örn; Login vs.)</li>
+          <li>Opsiyonel olarak;</li>
+          <br />
+          <p>“Description” alanına bir açıklama girebilirsiniz.</p>
+          <p>“Authorization” altından bir yetkilendirme tipi seçebilirsiniz.</p>
+          <p>
+            “Pre-request scripts” alanı altında collection’da bulunan her
+            request’ten önce yürütmek istediğiniz kod parçalarını
+            yazabilirsiniz.
+          </p>
+          <p>
+            “Tests” alanı altında collection’da bulunan her request’ten sonra
+            yürütmek istediğiniz testleri yazabilirsiniz.
+          </p>
+          <li>“Create” butonuna basınız.</li>
+        </ol>
+        <img
+          src="img/Postman Kurulum ve Arayüzü Hakkında Ön İzleme/img-10.png"
+          alt=""
+        />
+        <br /><br />
+        <h4>2.3. Create an Environment</h4>
+        <p>
+          Environment, ortam değişkenleri oluşturabildiğimiz ve bu değişkenleri
+          sakladığımız bir alandır. Environment altında bulunan değişkenleri,
+          farklı request veya collection’larda çağırabiliriz. Bu değişkenleri
+          pre-request ve test alanlarında set veya get edebiliriz.
+        </p>
+        <p>
+          Aşağıdaki adımları takip ederek bir environment oluşturabilirsiniz.
+        </p>
+        <ol>
+          <li>Header bar kısmında bulunan “New” butonuna tıklayın.</li>
+          <li>“Create New” sekmesinde “Environment” a tıklayın.</li>
+          <li>
+            Environment’a bir isim vererek “Add” butonuna tıklayın.(“Add”
+            butonuna tıklamadan önce ortam değişkenlerini de ekleyebilirsiniz.
+            Ayrıca ortam değişkenlerini ekleyebileceğiniz başka alanlarda
+            bulunmaktadır.)
+          </li>
+          <li>
+            Başka ortamlar oluşturduysanız, “Manage Environments” sekmesinde
+            bunları görüntülersiniz. Ayrıca bu ortamları paylaşabilir,
+            düzenleyebilir, indirebilir veya silebilirsiniz.
+          </li>
+        </ol>
+        <img
+          src="img/Postman Kurulum ve Arayüzü Hakkında Ön İzleme/img-11.png"
+          alt=""
+        />
+        <br /><br />
+        <h4>2.4. Create a Monitor</h4>
+        <p>
+          Bir collection’ın altındaki API’lerin performanslarını ve “response
+          time” değerini belirli aralıklarla düzenli olarak kontrol etmek için
+          monitor oluşturabilirsiniz. (Örneğin; bir monitorü 5 dakikada bir
+          çalıştıracak şekilde ayarlıyabilirsiniz.)
+        </p>
+        <p>Aşağıdaki adımları takip ederek bir monitor oluşturabilirsiniz.</p>
+        <ol>
+          <li>Header bar kısmında bulunan “New” butonuna tıklayın.</li>
+          <li>“Create New” sekmesinde “Monitor” e tıklayın.</li>
+          <li>
+            İzlemek istediğiniz yeni bir API veya mevcut bir collection’ı seçin.
+            İzlemek için yeni bir API oluşturursanız, bir request metodu, url’i,
+            response kodu ve response body girmelisiniz. Mevcut bir collection
+            kullanıyorsanız, collection’lar listesinden seçmelisiniz.
+          </li>
+          <li>
+            İzlemek istediğiniz request’i seçtikten veya oluşturduktan sonra,
+            Next butonuna tıklayın. “Configuration” sekmesinde aşağıdaki
+            adımları izleyin.
+          </li>
+          <li>“Monitor Name” girin.</li>
+          <li>Bir environment seçin (isteğe bağlı).</li>
+          <li>Monitörün hangi sıklıkla çalışacağını ayarlayın.</li>
+          <li>
+            Sonuçlarınızı izlemek istediğiniz yerden dünyanın bir veya daha
+            fazla bölgesini seçin.
+          </li>
+          <li>“Create” butonuna basın.</li>
+          <li>
+            Gelen son sekmede ise önerilen adımların listesini
+            gözlemleyebilirsiniz.
+          </li>
+          <br />
+          <img
+            src="img/Postman Kurulum ve Arayüzü Hakkında Ön İzleme/img-12.png"
+            alt=""
+          />
+          <br /><br />
+          <li>Monitor sonucu aşağıdaki gibi görülmektedir.</li>
+          <br />
+        </ol>
+        <img
+          src="img/Postman Kurulum ve Arayüzü Hakkında Ön İzleme/img-13.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Ayrıca Postman’de documentation ve mock-server’da oluşturabilirsiniz.
+        </p>
+        <br />
+        <h3>3. WorkSpaces</h3>
+        <p>
+          Postman kullanıcılara farklı workspace’lerde çalışma imkanı
+          sunmaktadır. Ayrıca bu workspace’lere takım arkadaşlarınızı davet
+          edebilir ve onlarla birlikte çalışma imkanı bulabilirsiniz.
+          <strong
+            >Ayrıca Postman’in yeni sürümüyle birlikte gelen özelliklerle
+            ekibinize roller ve izinler tanımlayabilirsiniz. Örneğin, takım
+            arkadaşlarınızın, collection’ları görüntüleyebilmelerine izin
+            verirken düzenlemelerini engelleyebilirsiniz.</strong
+          >
+        </p>
+        <p>
+          Aşağıdaki resimde bulunan “Create New” butonuna basarak yeni bir
+          workspace oluşturabilirsiniz.
+        </p>
+        <img
+          src="img/Postman Kurulum ve Arayüzü Hakkında Ön İzleme/img-14.png"
+          alt=""
+        />
+        <br /><br />
+        <img
+          src="img/Postman Kurulum ve Arayüzü Hakkında Ön İzleme/img-15.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Bir sonraki yazımızda Postman’de kod mimarisinin nasıl oluştuğu
+          üzerinde duracağız.
+        </p>
+        <p>Herkese keyifli ve sağlıklı haftalar :)</p>
+        <br /><br />
+        <div class="author">
+          <p>Ozan ESER</p>
+        </div>
+        <div class="post-meta">
+          <a href="blog-6.html" class="post-category cat-2">Postman</a>
+          <span class="post-date" style="color: black;">22 Mart, 2020</span>
+        </div>
+        <br /><br />
+        <div class="direction-buttons">
+          <a href="blog-5.html" class="previous">&#8617; Önceki</a>
+          <a href="blog-7.html" class="next">Sonraki &#8618;</a>
+        </div>
+        <div class="recommended-posts">
+          <div class="recomended-posts-header">
+            <h3>Benzer Yazılar</h3>
+          </div>
+          <div class="recommended-posts-body">
+            <div class="col-6 col-m-12 col-s-12">
+              <div class="recommended-post">
+                <a href="blog-7.html" class="recommended-post-img">
+                  <img
+                    src="img/Postman ile Backend API Otomasyonunda Kod Mimarisi/img-1.png"
+                    alt=""
+                  />
+                </a>
+                <div class="recommended-post-body">
+                  <div class="post-meta">
+                    <a href="blog-7.html" class="post-category cat-2"
+                      >Postman</a
+                    >
+                  </div>
+                  <h3 class="post-title">
+                    <a href="blog-7.html"
+                      >Postman ile Backend API Otomasyonunda Kod Mimarisi
+                    </a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-m-12 col-s-12">
+              <div class="recommended-post">
+                <a href="blog-8.html" class="recommended-post-img">
+                  <img
+                    src="img/Postman ile Backend API Otomasyonunda Dinamik Değişkenler/img-1.png"
+                    alt=""
+                  />
+                </a>
+                <div class="recommended-post-body">
+                  <div class="post-meta">
+                    <a href="blog-8.html" class="post-category cat-2"
+                      >Postman</a
+                    >
+                  </div>
+                  <h3 class="post-title">
+                    <a href="blog-8.html"
+                      >Postman ile Backend API Otomasyonunda Dinamik Değişkenler
+                    </a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+    <!-- /section -->
+
+    <!-- Footer -->
+    <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="first-row">
+          <div class="col-6 col-s-12 col-m-6">
+            <h6>Hakkımızda</h6>
+            <p>
+              YazilimTestOtomasyonu.com
+              <strong>Yazılım Test Yaklaşımları ve Otomasyonu </strong>hakkında
+              bilinmesi gerekenlerin doğru adresi.
+            </p>
+          </div>
+
+          <div class="col-3 col-s-12 col-m-3">
+            <h6>Kategoriler</h6>
+            <ul class="footer-links">
+              <li><a href="softwaretesting.html">Yazılım Testi</a></li>
+              <li><a href="jmeter.html">Jmeter</a></li>
+              <li><a href="postman.html">Postman</a></li>
+              <li><a href="#">Cucumber</a></li>
+              <li><a href="#">SOAP UI</a></li>
+            </ul>
+          </div>
+
+          <div class="col-3 col-s-12 col-m-3">
+            <h6>Hızlı Erişimler</h6>
+            <ul class="footer-links">
+              <li><a href="#">Yazarlarımız</a></li>
+              <li><a href="contactus.html">Bize Ulaşın</a></li>
+              <li><a href="#">Kaynaklar</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="second-row">
+          <div class="col-m-8 col-s-6 col-8">
+            <p class="copyright-text">
+              Copyright &copy; 2020 All Rights Reserved by
+              YazilimTestOtomasyonu.com
+            </p>
+          </div>
+
+          <div class="col-m-4 col-s-6 col-4">
+            <ul class="social-icons">
+              <li>
+                <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+              </li>
+              <li>
+                <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- /Footer -->
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

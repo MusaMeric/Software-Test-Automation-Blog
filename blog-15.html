@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Keywords"
+      content="Postman, JMeter, Yazılım Test, Yazılım Test Otomasyonu, Postman Backend Otomasyonu, Backend API Otomasyonu, JMeter Performans Testi, JMeter Yük Testi, Assertion, Jmeter Config Element"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="icon" href="img/icon2.png" type="image/ico" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>Yazılım Test Otomasyonu</title>
+  </head>
+
+  <body>
+    <!-- Scroll To Top Button -->
+    <button onclick="scrollToTop()" id="scrollToTop" title="Yukarı çık">
+      Yukarı Çık
+    </button>
+    <!-- /Scroll To Top Button -->
+
+    <!-- Off-Canvas Menu -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="hakkımızda.html">Hakkımızda</a>
+      <a href="#bizekatil">Bize Katıl</a>
+      <a href="#iletisim">İletişim</a>
+    </div>
+    <!-- /Off-Canvas Menu -->
+    <!-- Header -->
+    <header id="header">
+      <!-- Nav -->
+      <div id="nav">
+        <div class="container">
+          <!-- Logo -->
+          <div class="nav-logo">
+            <a href="index.html">
+              <img
+                src="img/icon2.png"
+                alt="Anasayfaya git"
+                width="50"
+                height="50"
+              />
+            </a>
+          </div>
+          <!-- /Logo -->
+          <!-- Nav-Menu -->
+          <div class="nav-menu">
+            <a href="index.html" class="nav-items">Anasayfa</a>
+            <a href="softwaretesting.html" class="nav-items nav-res">Yazılım Testi</a>
+            <a href="postman.html" class="nav-items nav-res">Postman</a>
+            <a href="jmeter.html" class="nav-items active">JMeter</a>
+            <div class="dropdown">
+              <button onclick="clickableDropdown()" class="dropbtn nav-items">
+                Daha Fazlası <i class="fa fa-caret-down"></i>
+              </button>
+              <div id="clickable-content" class="dropdown-content">
+                <a href="jmeter.html">JMeter</a>
+                <a href="postman.html">Postman</a>
+                <a href="softwaretesting.html">Yazılım Testi</a>
+              </div>
+            </div>
+          </div>
+          <!-- /Nav-Menu -->
+
+          <!-- Off-Canvas Menu -->
+          <div class="nav-btns">
+            <button class="aside-btn" onclick="openNav()">
+              <i class="fa fa-bars" style="color: #19c6ca;"></i>
+            </button>
+          </div>
+          <!-- Off-Canvas Menu -->
+        </div>
+      </div>
+      <!-- /Nav-->
+    </header>
+    <!-- /Header -->
+
+    <!-- section -->
+    <div class="section">
+      <div class="container-blog">
+        <h2>JMeter Performans Testlerinde Config Element Kullanımı</h2>
+        <img src="img/jmeter config element/config elmnt.jpg" alt="" />
+        <br />
+        <br />
+        <p>Herkese merhaba,</p>
+        <p>
+          Bir önceki yazımızda Jmeter’da kullanılan assertion’lar ve bu
+          assertion’lara ait performans maliyetlerinden bahsetmiştik. Bu
+          yazımızda bir diğer önemli konu olan config elementlerden
+          bahsedeceğiz. Config elemenleri bir örnekle açıklamamız gerekirse
+          örneğin google.com sunucusuna 100 HTTP request göndermek istediğimizde
+          100 request için de manuel olarak “server name = google.com” girmemiz
+          gerekir. Bunun yerine, “HTTP Request Defaults” config elementini
+          ekleyerek “Server Name or IP” alanına ilgili url’i girmemiz
+          yeterlidir. Bu sayede 100 kez yazmamıza gerek kalmaz. Kısaca varsılan
+          ayarlar oluşturmak ve yapılandırmak için config elementlere ihtiyaç
+          duyarız. Bu yazımızda sık kullanılan config elementleri hakkında
+          ayrıntılı bilgi sahibi olacağız.
+        </p>
+        <p>Hadi başlayalım.</p>
+        <p>
+          Configuration elementleri, Sampler tarafından kullanılacak varsayılan
+          ayarları ve değişkenleri oluşturmamıza ve yapılandırmamıza olanak
+          sağlar. Sampler tarafından yapılan request’lere çeşitli ayarlar
+          eklemek veya değiştirmek için sampler’dan önce yürütülür. Bu nedenle,
+          bir configuration elementine yalnızca yerleştirildiği branch’in
+          içinden erişilir.
+        </p>
+        <p>
+          Aşağıdaki görselde JMeter’da yaygın olarak kullanılan bazı
+          configuration elementleri gösterilmektedir.
+        </p>
+        <img src="img/jmeter config element/img-2.png" alt="" />
+        <br /><br />
+        <p>
+          Peki configuration elementleri nasıl ekleriz?
+          <strong
+            >Configuration elementlerini eklemek için aşağıdaki adımlar takip
+            edilir.</strong
+          >
+        </p>
+        <ol style="line-height: 1.6;">
+          <li>
+            <strong
+              >Test Plan, thread group veya logic controller elementlerinden
+              birine sağa tıklanır.</strong
+            >
+          </li>
+          <li><strong>“Add” butonunun üzerine gelinir.</strong></li>
+          <li><strong>“Config Element” in üzerine gelinir.</strong></li>
+          <li><strong>Gerekli config element eklenir.</strong></li>
+        </ol>
+        <img
+          src="img/jmeter config element/img-3.png"
+          alt=""
+          style="min-width: 800px;"
+        />
+        <p>
+          Aşağıda, web ve mobil uygulamaların performans testinde kullanılan
+          önemli config elementlerden bazıları açıklanacaktır.
+        </p>
+        <h3>1. CSV Data Set Config</h3>
+        <p>
+          CSV Data Set Config elementi, text veya CSV biçimindeki dosyalardan
+          veri okumak, verileri değişkenlere atamak ve daha sonra sampler’larda
+          değişkenleri kullanmak için kullanılır. Jmeter’ın her bir ayrı
+          request’te farklı parametre iletmek yerine bir CSV dosyasından bazı
+          parametrelerin değerlerini okumasına yardımcı olur. Örneğin,
+          uygulamamızın login senaryosunda 100 farklı kullanıcıyla yük testini
+          yapmamız gerekiyorsa bu elementi kullanabiliriz. Bir CSV dosyasında
+          iki sütun oluşturarak 100 kullanıcı için username/password değerlerini
+          buraya girebiliriz. Böylece JMeter, sampler’larda değişkenler
+          aracılığıyla server’a gönderilen her request için bir veri çiftini
+          (username/password) okuyabilir.
+        </p>
+        <p>
+          Aşağıda bu config elemente bir örnek olması amacıyla bir .csv
+          dosyasından şehir isimlerini ve apikey parametresini okuyarak 3 şehir
+          için hava durumu bilgilerini gözlemleyeceğiz.
+        </p>
+        <img src="img/jmeter config element/img-4.JPG" alt="" />
+        <p>
+          <strong>Adım 1:</strong> Bir .csv dosyası oluşturarak verileri
+          aşağıdaki şekilde girin.
+        </p>
+        <img src="img/jmeter config element/img-5.png" alt="" />
+        <br /><br />
+        <p>
+          <strong>Adım 2:</strong> Bir test planı oluşturarak Thread Group, CSV
+          Data Set Config, Http Request Sampler, View Results Tree Listener
+          elementlerini sırasıyla ekleyin.
+        </p>
+        <img src="img/jmeter config element/img-6.png" alt="" />
+        <br /><br />
+        <p>
+          <strong>Adım 3:</strong> CSV Data Set Config elementinin altında
+          bulunan “Filename” parametresine oluşturduğumuz .csv dosyasını
+          ekleyin. .csv dosyasında ilk satırda paremetrelerin isimlerini
+          belirttiğimiz için (city/appid) “Ignore first line” parametresini true
+          olarak seçelim. Oluşturduğumuz .csv dosyasındaki parametreleri farklı
+          sütunlarda oluşturduğumuz için “Delimeter” parametresini “;” (noktalı
+          virgül) ile belirtmeliyiz.
+        </p>
+        <p>
+          <strong>Not:</strong> CSV Data Set Config elementi altında bulunan her
+          parametrenin ne anlama geldiğini aşağıdaki linkten ayrıntılı olarak
+          inceleyebilirsiniz.
+          https://jmeter.apache.org/usermanual/component_reference.html#config_elements
+        </p>
+        <img src="img/jmeter config element/img-7.png" alt="" />
+        <br /><br />
+        <p>
+          <strong>Adım 4:</strong> Yukarıda verdiğimiz url ile Http
+          Sampler’ımızı aşağıdaki görseldeki gibi düzenleyelim.
+        </p>
+        <img src="img/jmeter config element/img-8.png" alt="" />
+        <br /><br />
+        <p>
+          Start butonuna basarak testimizi koştuğumuzda sadece İstanbul için bir
+          request atıldığını gözlemliyoruz. 3 Şehir içinde request atılması için
+          thread group elementi altından “Loop Count” parametresini 3 olarak
+          setleyerek testimizi bir daha koşalım ve sonuçları view results tree
+          listener’I altından gözlemleyelim.
+        </p>
+        <img src="img/jmeter config element/img-9.png" alt="" />
+        <br /><br />
+        <h3>2. HTTP Request Default</h3>
+        <p>
+          Bu config element, HTTP request’lerin kullandığı varsayılan değerleri
+          ayarlamamıza olanak tanır. Örneğin; 25 tane HTTP request ile bir Test
+          Plan’ı oluşturuyorsak ve tüm request’ler aynı server’a gönderiliyorsa,
+          tek bir HTTP Request Defaults elementi ile
+          <strong>“Server Name or IP”</strong> parametresini tüm request’ler
+          için eklemiş oluruz. Eklediğimiz 25 HTTP Request için
+          <strong>“Server Name or IP“</strong> alanını boş bırakmalıyız.
+          Controller’lar bu parametrenin değerini HTTP Request Defaults elementi
+          üzerinden alırlar.
+        </p>
+        <img src="img/jmeter config element/img-10.png" alt="" />
+        <br /><br />
+        <p>
+          Bir performans test senaryosuna, Http Request Default elementi
+          ekleyerek
+          <strong
+            >protocol, server name, port number, path, connection time
+            out</strong
+          >
+          gibi parametreleri belirttiğimizde, her http request için bu
+          parametreleri belirtmemize gerek kalmaz. Bu element testimizde yer
+          alan tüm http request’leri kapsar.
+        </p>
+        <p>
+          Fakat şunu unutmamalıyız. Bir Http Request Sampler, Http Request
+          Default elementinden daha önceliklidir. Yani bir Http Request Sampler
+          içerisindeki paremetrelerden herhangi birini değiştirdiğimizde, ilgili
+          request http request sampler elementindeki paremetreyi alır.
+        </p>
+        <img src="img/jmeter config element/img-11.png" alt="" />
+        <br /><br />
+        <p>
+          Yukarıdaki görselde yer alan örnekte;
+          <strong>Protocol: https, Server Name: ${ProdUrl}, port:8080</strong>
+          olarak set edilmiştir. Bu değerler testimizin içerisinde yer alan tüm
+          http request sampler’lar için geçerlidir.
+        </p>
+        <p>
+          <strong>Not:</strong> ${ProdUrl} değişkeni değerini User Defined
+          Variables config elementi içerisinden almaktadır.
+        </p>
+        <p>
+          Ayrıca <strong>Advanced</strong> sekmesinde yer alan
+          <strong>connection timeout</strong> parametresi özellikle performans
+          testleri için çok kullanılır. Connection Timeout parametresi response
+          için beklenecek maksimum süreyi milisaniye türünden ifade etmektedir.
+          Bu değer default olarak 20 saniyedir. Özellikle Jmeter performans
+          testlerinde çok sık karşılaşılan hata mesajlarından biri aşağıdaki
+          gibidir.
+        </p>
+        <p>
+          <strong
+            >Non HTTP response code: java.net.SocketTimeoutException Non HTTP
+            response message: connect timed out</strong
+          >
+        </p>
+        <p>
+          Bu hatayı önlemek için connection timeout parametresini daha yüksek
+          bir değere setlememiz önerilir. Örn; 60 saniye.
+        </p>
+        <img src="img/jmeter config element/img-12.png" alt="" />
+        <br /><br />
+        <h3>3. User Defined Variables</h3>
+        <p>
+          User Defined Variables elementi, test planında varsayılan değişkenleri
+          ve değerleri kullanmamızı sağlar. User Defined Variables elementini
+          test planında birden fazla yerde kullanmamız gerekiyorsa Test
+          Plan’ının altında tanımlamalıyız. Fakat tek bir Sampler’da
+          kullanıcaksak bu Sampler’ın altında tanımlayabiliriz.
+        </p>
+        <img src="img/jmeter config element/img-13.png" alt="" />
+        <br /><br />
+        <p>
+          Bu değişkenleri <strong>${variable_name}</strong> şeklinde
+          kullanabiliriz.
+        </p>
+        <p>
+          Aşağıda bir Http Request Sampler’ın path parametresinin içerisinde
+          User Defined Variables parametresi kullanılmıştır.
+        </p>
+        <img src="img/jmeter config element/img-14.png" alt="" />
+        <br /><br />
+        <h3>4. HTTP Cookie Manager</h3>
+        <p>
+          HTTP Cookie Manager, JMeter’ın web server’dan gönderilen cookie’leri
+          saklayarak sonraki requestler’de kullanmasını ve web server’a
+          gönderilmesini sağlar.
+        </p>
+        <p>
+          Aslında bu elementin iki temel işlevi vardır. Birincisi, cookie’leri
+          tıpkı bir web browser gibi depolar ve gönderir. Bir HTTP request’imiz
+          varsa ve response bir cookie içeriyorsa, Cookie Manager bu cookie
+          otomatik olarak depolar ve ilgili web sitesine atılacak tüm
+          request’ler için kullanır. Her JMeter Thread Group’un kendi cookie
+          saklama alanı vardır. Dolayısıyla, oturum bilgilerini depolamak için
+          cookie kullanan bir web sitesini test ediyorsanız, her JMeter thread
+          group’un kendi oturumu olacaktır. Bu tür cookie’lerin Cookie Manager
+          ekranında görünmediğini, ancak View Results Tree listener’ı kullanarak
+          görülebileceğini unutmamalıyız.
+        </p>
+        <p>
+          İkinci işlevi ise, Cookie Manager’a manuel olarak bir cookie
+          ekleyebiliriz. Ancak, bunu yaparsak, cookie tüm JMeter thread
+          group’lar tarafından kullanılır.
+        </p>
+        <h3>5. HTTP Cache Manager</h3>
+        <p>
+          HTTP Cache Manager, JMeter’ın web server tarafından HTTP Header’da
+          ayarlanan Cache komutlarına uymasını ve Cache özelliği bakımından bir
+          browser gibi davranmasını sağlayacaktır.
+        </p>
+        <p>
+          Web tarayıcıları, internet üzerindeki trafiğin azaltılmasına izin
+          veren bazı mekanizmalara sahiptir. Bu element, web server’da ilk
+          tetiklemeden sonraki request’lerde kullanılmak üzere ağdan indirilen
+          kaynakların cache’e alınmasıdır. Bu nedenle bir performans testi
+          oluştururken aynı davranışı simüle etmek son derece önemlidir.
+        </p>
+        <p>
+          Eğer testimizi HTTP Cache Manager kullanmadan yaparsak normal
+          senaryoda browser tarafından Cache’lendiği için server’dan istenmeyen
+          kaynaklar JMeter tarafından istenecek ve server açısından test
+          koşullarının normal koşullardan daha zor olmasına sebep olacaktır.
+          Yani test gerçeklikten uzaklaşacaktır.
+        </p>
+        <p>
+          HTTP Cache Manager altında bazı parametreler içermektedir. Bu
+          parametreleri aşağıda yorumlayacağız.
+        </p>
+        <img src="img/jmeter config element/img-15.png" alt="" />
+        <br /><br />
+        <p>
+          <strong>Clear cache each iteration? :</strong> Eğer işaretlenirse her
+          iterasyonda cache temizlenir.
+        </p>
+        <p>
+          <strong
+            >User Cache-Control/Expires header when processing GET
+            request:</strong
+          >
+          Eğer işaretlenirse Cache-Control/Expires değeri geçerli saate göre
+          kontrol edilir. Sampler, remote server’dan URL istemeden hızlıca geri
+          döner. Browser davranışını taklit etmeyi amaçlamaktadır ve çok
+          önemlidir.
+        </p>
+        <p>
+          <strong>Max. Number of elements in cache:</strong> Cache’deki maksimum
+          element sayısını ifade etmektedir. Bu değer default olarak 5000’dir.
+          Ancak arttırılması testlerde önemli olabiliyor. Çünkü tüm kaynaklar
+          RAM’de cache’e alınır. Bu nedenle bu parametrenin çok yüksek olduğu
+          senaryoda kolayca <strong>OutOfMemoryException</strong> elde
+          edebiiriz. Bu tür davranışlardan kaçınmak için jmeter.bat içindeki
+          JVM-Xmx seçeneğini ayarlamamız gerekir.
+        </p>
+        <img src="img/jmeter config element/img-16.JPG" alt="" />
+        <br /><br />
+        <p>
+          Bu parametre sistemimizin “Available Physical Memory” değerine göre
+          ayarlanmalıdır. Bu değeri windows makinalar için “windows search”
+          alanına “msInfo32” yazarak gözlemleyebilirsiniz.
+        </p>
+        <p>
+          Şimdi bu parametrelerin önemini göstermek için daha önceki yazımızda
+          medium sayfası için oluşturduğumuz teste HTTP Cache Manager elementini
+          ekleyelim. “Clear cache each iteration?” ve “User
+          Cache-Control/Expires header when processing GET request”
+          parametrelerini seçmeyelim. Testi bu şekilde koşarak “View Results in
+          Table” listener’I ile Sample Time değerlerini inceleyelim.
+        </p>
+        <img src="img/jmeter config element/img-17.png" alt="" />
+        <br /><br />
+        <p>
+          Şimdi de bu iki parametreyi seçelim ve testimizi tekrar koşturalım.
+        </p>
+        <img src="img/jmeter config element/img-18.png" alt="" />
+        <br /><br />
+        <p>
+          İkinci test sonucumuzda browser davranışını taklit ettiğimiz için daha
+          kısa sample time’lar alarak daha gerçekçi bir test gerçekleştirmiş
+          olduk. Unutulmamalıdır ki performans testlerinde, testlerin gerçek
+          kullanıcı davranışlarını simüle etmesi en önemli unsurdur.
+        </p>
+        <p>
+          Umarım faydalı bir yazı olmuştur. Bir sonraki yazımızda görüşmek
+          üzere.
+        </p>
+        <p>Herkese keyifli ve sağlıklı haftalar :)</p>
+        <br />
+        <br />
+
+        <div class="author">
+          <p>Ozan ESER</p>
+        </div>
+        <div class="post-meta">
+          <a href="blog-15.html" class="post-category cat-1">JMeter</a>
+          <span class="post-date" style="color: black;">15 Mayıs, 2020</span>
+        </div>
+        <br /><br />
+        <div class="direction-buttons">
+          <a href="blog-14.html" class="previous">&#8617; Önceki</a>
+          <a href="blog-16.html" class="next">Sonraki &#8618;</a>
+        </div>
+        <div class="recommended-posts">
+          <div class="recomended-posts-header">
+            <h3>Benzer Yazılar</h3>
+          </div>
+          <div class="recommended-posts-body">
+            <div class="col-6 col-m-12 col-s-12">
+              <div class="recommended-post">
+                <a href="blog-16.html" class="recommended-post-img">
+                  <img
+                    src="img/jmeterHtmlReporter/jmeterhtmlreporter.png"
+                    alt=""
+                  />
+                </a>
+                <div class="recommended-post-body">
+                  <div class="post-meta">
+                    <a href="blog-16.html" class="post-category cat-1"
+                      >JMeter</a
+                    >
+                  </div>
+                  <h3 class="post-title">
+                    <a href="blog-16.html"
+                      >JMeter ile HTML Reporter Kullanımı
+                    </a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-m-12 col-s-12">
+              <div class="recommended-post">
+                <a href="blog-14.html" class="recommended-post-img">
+                  <img
+                    src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-1.png"
+                    alt=""
+                  />
+                </a>
+                <div class="recommended-post-body">
+                  <div class="post-meta">
+                    <a href="blog-14.html" class="post-category cat-1"
+                      >JMeter</a
+                    >
+                  </div>
+                  <h3 class="post-title">
+                    <a href="blog-14.html"
+                      >JMeter Performans Testlerinde Assertion Kullanımı ve
+                      Performans Maliyetleri
+                    </a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+    <!-- /section -->
+
+    <!-- Footer -->
+    <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="first-row">
+          <div class="col-6 col-s-12 col-m-6">
+            <h6>Hakkımızda</h6>
+            <p>
+              YazilimTestOtomasyonu.com
+              <strong>Yazılım Test Yaklaşımları ve Otomasyonu </strong>hakkında bilinmesi
+              gerekenlerin doğru adresi.
+            </p>
+          </div>
+
+          <div class="col-3 col-s-12 col-m-3">
+            <h6>Kategoriler</h6>
+            <ul class="footer-links">
+              <li><a href="softwaretesting.html">Yazılım Testi</a></li>
+              <li><a href="jmeter.html">Jmeter</a></li>
+              <li><a href="postman.html">Postman</a></li>
+              <li><a href="#">Cucumber</a></li>
+              <li><a href="#">SOAP UI</a></li>
+            </ul>
+          </div>
+
+          <div class="col-3 col-s-12 col-m-3">
+            <h6>Hızlı Erişimler</h6>
+            <ul class="footer-links">
+              <li><a href="#">Yazarlarımız</a></li>
+              <li><a href="contactus.html">Bize Ulaşın</a></li>
+              <li><a href="#">Kaynaklar</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="second-row">
+          <div class="col-m-8 col-s-6 col-8">
+            <p class="copyright-text">
+              Copyright &copy; 2020 All Rights Reserved by
+              YazilimTestOtomasyonu.com
+            </p>
+          </div>
+
+          <div class="col-m-4 col-s-6 col-4">
+            <ul class="social-icons">
+              <li>
+                <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+              </li>
+              <li>
+                <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- /Footer -->
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Keywords"
+      content="Postman, JMeter, Yazılım Test, Yazılım Test Otomasyonu, Postman Backend Otomasyonu, Backend API Otomasyonu, JMeter Performans Testi, JMeter Yük Testi, Assertion, Jmeter Config Element"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="icon" href="img/icon2.png" type="image/ico" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>Yazılım Test Otomasyonu</title>
+  </head>
+
+  <body>
+    <!-- Scroll To Top Button -->
+    <button onclick="scrollToTop()" id="scrollToTop" title="Yukarı çık">
+      Yukarı Çık
+    </button>
+    <!-- /Scroll To Top Button -->
+
+    <!-- Off-Canvas Menu -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="hakkımızda.html">Hakkımızda</a>
+      <a href="#bizekatil">Bize Katıl</a>
+      <a href="#iletisim">İletişim</a>
+    </div>
+    <!-- /Off-Canvas Menu -->
+    <!-- Header -->
+    <header id="header">
+      <!-- Nav -->
+      <div id="nav">
+        <div class="container">
+          <!-- Logo -->
+          <div class="nav-logo">
+            <a href="index.html">
+              <img
+                src="img/icon2.png"
+                alt="Anasayfaya git"
+                width="50"
+                height="50"
+              />
+            </a>
+          </div>
+          <!-- /Logo -->
+          <!-- Nav-Menu -->
+          <div class="nav-menu">
+            <a href="index.html" class="nav-items">Anasayfa</a>
+            <a href="softwaretesting.html" class="nav-items nav-res"
+              >Yazılım Testi</a
+            >
+            <a href="postman.html" class="nav-items nav-res">Postman</a>
+            <a href="jmeter.html" class="nav-items active">JMeter</a>
+            <div class="dropdown">
+              <button onclick="clickableDropdown()" class="dropbtn nav-items">
+                Daha Fazlası <i class="fa fa-caret-down"></i>
+              </button>
+              <div id="clickable-content" class="dropdown-content">
+                <a href="jmeter.html">JMeter</a>
+                <a href="postman.html">Postman</a>
+                <a href="softwaretesting.html">Yazılım Testi</a>
+              </div>
+            </div>
+          </div>
+          <!-- /Nav-Menu -->
+
+          <!-- Off-Canvas Menu -->
+          <div class="nav-btns">
+            <button class="aside-btn" onclick="openNav()">
+              <i class="fa fa-bars" style="color: #19c6ca;"></i>
+            </button>
+          </div>
+          <!-- Off-Canvas Menu -->
+        </div>
+      </div>
+      <!-- /Nav-->
+    </header>
+    <!-- /Header -->
+
+    <!-- section -->
+    <div class="section">
+      <div class="container-blog">
+        <h2>JMeter ile Performans Testine İlk Adım</h2>
+        <img
+          src="img/JMeter ile Performans Testine İlk Adım/img-1.jpeg"
+          alt=""
+        />
+        <br /><br />
+        <p>Herkese merhaba,</p>
+        <p>
+          Bilgi Teknolojilerinin modern döneminde yazılım testi önemli bir evrim
+          geçirmiştir. Daha önceleri bug ve crash gibi sorunlar üzerinde
+          yoğunlaşan dar bir kalite anlayışı hüküm sürüyorken günümüzde bunlarla
+          birlikte yazılım uygulamalarının optimum performans ile büyük yükler
+          altında dahi kararlı şekilde çalışması çok önemli bir hale gelmiştir.
+          Teknolojinin inanılmaz hızlara ulaştığı bu günlerde kullanıcıların
+          yazılım uygulamalarında aşırı zaman alan yüklenme sürelerine,
+          timeout’a girerek cevap veremeyen sistemlere hiç tahammülü kalmadı. Bu
+          sorunlar müşteri kaybına ve işiniz içinde yer aldığınız rekabet
+          koşulları göz önünde bulundurulduğunda işinizi kaybetmenize dahi sebep
+          olabiliyor. Bu sebeple bu yazı dizisinde performans testi ve
+          performans test toolları arasında en çok kullanılan araç olan JMeter
+          üzerinde yoğunlaşacağız.
+        </p>
+        <p>Keyifli bir yazı olması dileğiyle…</p>
+        <p>Hadi başlayalım!</p>
+        <img
+          src="img/JMeter ile Performans Testine İlk Adım/img-2.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Bir web sunucusunun ne kadar verimli çalıştığını öğrenmek için hiç
+          test yaptınız mı? Bir web sunucusu kaç eşzamanlı kullanıcıya hizmet
+          sağlayabilir?
+        </p>
+        <p>
+          Diyelim ki bir gün üzerinde çalıştığınız projenin 100 kullanıcı için
+          performans testini yapmanız istendi. Ne yapardınız? Elbette 100 kişiye
+          eşzamanlı olarak bilgisayar ve internet erişimi sağlarak bu testi
+          gerçekleştirmek akıllıca bir çözüm olmayacaktır. Bu testi 1000 veya
+          10000 kullanıcı için test ederken gereken altyapı ihtiyacını düşünün.
+          Aslına bakarsanız bu sayılar günümüzde çok da yüksek olmayan sayılar.
+          Bu nedenle, gerçek kullanıcı davranışları ile projenizin performans
+          testini simüle edecek JMeter gibi bir yazılım aracına ihtiyacınız
+          vardır. Ama önce <strong>“performans testi nedir?”</strong> bu konu
+          üzerine yoğunlaşalım.
+        </p>
+        <img
+          src="img/JMeter ile Performans Testine İlk Adım/img-3.jpeg"
+          alt=""
+        />
+        <br /><br />
+        <h3>Performans Testi</h3>
+        <p>
+          Performans Testi, sistemin belirli bir altyapı konfigürasyonu altında
+          mümkün olan en iyi (optimum) performans beklentisini belirler. Yani,
+          sistemin planlanan maksimum kapasitede istenilen performansa ulaşıp
+          ulaşmadığı doğrulamak ve nasıl davrandığı test etmektedir. Performans
+          testi; hız, ölçeklenebilirlik, kararlılık, güvenilirlik ve kaynak
+          kullanımı gibi sistemin kalite özelliklerini ölçmektedir.
+        </p>
+        <p>
+          <strong
+            >Performans testinin amacı hataları bulmak değil, performans
+            darboğazlarını ortadan kaldırmak ve sistemin kalite özelliklerini
+            ölçmektedir.
+          </strong>
+        </p>
+        <p>
+          Performans testi temel olarak bir yazılımın aşağıdaki belirli
+          özelliklerine odaklanır. Bunlar; hız (speed), kararlılık (stability)
+          ve ölçeklenebilirliktir (scalability).
+        </p>
+        <img
+          src="img/JMeter ile Performans Testine İlk Adım/img-4.jpeg"
+          alt=""
+        />
+        <br /><br />
+        <ol>
+          <li>
+            <strong>Hız:</strong> Uygulamanın hızlı yanıt verip vermeyeceğini
+            belirler. <br /><br />
+          </li>
+          <li>
+            <strong>Kararlılık:</strong> Uygulamanın değişen yükler altında
+            kararlı olup olmadığını belirler. <br /><br />
+          </li>
+          <li>
+            <strong>Ölçeklenebilirlik:</strong> Yazılım uygulamasının
+            işleyebileceği maksimum kullanıcı yükünü belirler. <br /><br />
+          </li>
+        </ol>
+        <p>
+          Performans testinin ne olduğunu artık bildiğinize göre, neden
+          performans testine ihtiyacınız olduğunu görelim.
+        </p>
+        <br />
+        <h3>Performans Testi Neden Gereklidir?</h3>
+        <p>
+          Performans testi uygulamalarının hızı, ölçeklenebilirliği ve
+          kararlılığı hakkında paydaşları bilgilendirir. Ürün piyasaya
+          sürülmeden önce riskleri ortaya çıkartarak gerekli iyileştirmeleri
+          yapmamızı sağlar. Performans testi yapılmadan veya gerekli önem
+          verilmeden zayıf performans metrikleri ile pazara gönderilen
+          uygulamaların kötü bir itibar kazanması ve beklenen satış hedeflerini
+          karşılamaması muhtemeldir.
+        </p>
+        <img
+          src="img/JMeter ile Performans Testine İlk Adım/img-5.jpeg"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Performans Testi yapılmayan yazılım aşağıdaki gibi sorunlardan
+          muzdarip olabilir.
+        </p>
+        <ol>
+          <li>
+            Birçok kullanıcının aynı anda yazılımı kullanırken yazılımın yavaş
+            çalışması. <br /><br />
+          </li>
+          <li>
+            Farklı işletim sistemlerindeki tutarsızlıklar ve zayıf
+            kullanılabilirlik.
+            <br /><br />
+          </li>
+        </ol>
+        <h3>Performans Testinin Avantajları Nelerdir?</h3>
+        <p>Performans testinin önemli avantajları aşağıdaki gibidir.</p>
+        <img
+          src="img/JMeter ile Performans Testine İlk Adım/img-6.png"
+          alt=""
+        />
+        <br /><br />
+        <ol>
+          <li>
+            <strong>Özellikleri Doğrulayın:</strong> Performans testi, yazılımın
+            temel özelliklerini doğrular. Sağlam bir yazılım temeli, yazılım
+            başarısı yaratmanın temel ilkesidir. Temel yazılım işlevlerinin
+            performansının ölçülmesi paydaşların yazılım hakkında önemli
+            kararlar almalarını sağlar. <br /><br />
+          </li>
+          <li>
+            <strong>Hızı, doğruluğu ve kararlılığı ölçün:</strong> Yazılımınızın
+            önemli bileşenlerinden olan hız, doğruluk ve kararlılık
+            parametrelerini baskı altında izlemenize yardımcı olur. Bu,
+            yazılımın ölçeklenebilirliği nasıl ele alabileceği konusunda çok
+            önemli bilgiler verir. <br /><br />
+          </li>
+          <li>
+            <strong>Kullanıcılarınızı mutlu tutun:</strong> Uygulama
+            performansını ölçerek, yazılımın müşterilerinize nasıl yanıt
+            verdiğini gözlemlemenizi sağlar. En önemli avantajı, kritik
+            sorunları müşterilerinizden önce saptayarak krizleri önlememizdir.
+            <br /><br />
+          </li>
+          <li>
+            <strong>Tutarsızlıkları belirleyin:</strong> Performans ölçümü,
+            geliştiriciler için uygulama yayınlanmadan önce bir tampon sağlar.
+            Uygulamalarda kullanıcı sayıları uygulama yayınlandıktan sonra
+            büyüyecektir. Bu sebeple performans testi, tutarsızlıkları
+            belirleyerek önlem almanızı sağlar. <br /><br />
+          </li>
+          <li>
+            <strong>Optimizasyon ve yük kapasitesini artırın: </strong>
+            Performans testinin bir diğer yararı da optimizasyon ve yük
+            kapasitesini geliştirme yeteneğidir. Performansı ölçmek, firmanızın
+            kullanıcı hacmi ile baş etmesine yardımcı olabilir. Böylece yazılım
+            yüksek kullanıcı seviyelerine ulaştığında hala kararlı bir kullanıcı
+            deneyimi sunulmasını sağlar. <br /><br />
+          </li>
+        </ol>
+        <h3>Performans Testi Türleri Nelerdir?</h3>
+        <p>
+          Aşağıdaki resimde farklı performans testi türleri gösterilmektedir.
+        </p>
+        <img
+          src="img/JMeter ile Performans Testine İlk Adım/img-7.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Şimdi çeşitli performans test türlerinin detaylarına derinlemesine
+          bakalım.
+        </p>
+        <ol>
+          <li>
+            <strong>Yük Testi (Load Testing):</strong> Yazılımın, beklenen
+            kullanıcı yükleri altında kararlı ve doğru bir şekilde işlemleri
+            gerçekleştirme yeteneğini test eder. Amaç, yazılım uygulaması
+            yayınlanmadan önce performans darboğazlarını tespit etmektir.
+            Response’ların gecikme sürelerini (latency time), kullanıcı
+            deneyimlerini vb. davranışlarını gözlemleyen test türüdür.
+            <br /><br />
+          </li>
+          <li>
+            <strong>Stres Testi (Stress Testing):</strong> Beklenen kullanıcı
+            yükleri üzerinde (overload) bir yazılımın nasıl davrandığını test
+            eder. Amaç, aşırı yük altındaki kırılma noktasını belirlemektir.
+            Yani, performans testinde belirlenen maksimum kapasitenin üzerinde
+            bir yüke çıkarak, sistemin hangi noktada kırıldığını ve sistemdeki
+            yükün normal değerlere döndürüldüğünde sistemin fonksiyonlarının
+            kararlı ve doğru bir şekilde çalışıp çalışmadığını test
+            etmektedir.<br /><br />
+          </li>
+          <li>
+            <strong>Dayanıklılık Testi (Endurance Testing):</strong> Yazılımın
+            beklenen kullanıcı yükünü ne kadar uzun süre kaldırabildiğini test
+            etmek amacıyla gerçekleştirlen testtir. <br /><br />
+          </li>
+          <li>
+            <strong>Spike Testi (Spike Testing):</strong> Yazılımın kullanıcılar
+            tarafından ani yük artışlarındaki tepkisini test eder. <br /><br />
+          </li>
+          <li>
+            <strong>Hacim Testi (Volume Testing):</strong> Değişen veritabanı
+            hacimleri altında yazılım uygulamasının performansını test etmektir.
+            <br /><br />
+          </li>
+          <li>
+            <strong>Ölçeklenebilirlik Testi (Scalability Testing):</strong>
+            Yazılım uygulamasının kullanıcı yükünde bir artış gözlemlendiğinde
+            gerçekleştirilen test türüdür. Kapasite arttırımı hakkında planlama
+            yapmanıza yardımcı olur.
+            <br /><br />
+          </li>
+        </ol>
+        <p>
+          Yukarıda verilen bilgiler ışığında, bu testlerden herhangi birini
+          gerçekleştirmek istiyorsanız, bir test aracına ihtiyacınız olacaktır.
+          Aşağıda popüler performans test araçlarını inceleyelim.
+        </p>
+        <br />
+        <h3>Performans Testi Araçları</h3>
+        <p>
+          Piyasada, performans testi için bir dizi araç mevcuttur.
+          İhtiyaçlarınızı karşılayacak, becerilerinize göre öğrenmesi kolay,
+          etkili ve hızlı sonuçlar gözlemleyebilecek bir araç seçmek çok
+          önemlidir. Aşağıda en popüler performans test tool’larını
+          paylaşıyorum.
+        </p>
+        <ol>
+          <li>LoadNinja <br /><br /></li>
+          <li><strong>Apache JMeter</strong> <br /><br /></li>
+          <li>WebLOAD <br /><br /></li>
+          <li>LoadUI Pro <br /><br /></li>
+          <li>LoadView <br /><br /></li>
+          <li>NeoLoad <br /><br /></li>
+          <li>LoadRunner <br /><br /></li>
+          <li>Silk Performer <br /><br /></li>
+          <li>AppLoader <br /><br /></li>
+          <li>SmartMeter.io <br /><br /></li>
+        </ol>
+        <img
+          src="img/JMeter ile Performans Testine İlk Adım/img-8.jpeg"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Performans testlerinde özellikle müşteri memnuniyeti açısından gerçek
+          zamanlı kullanıcıların sümile edilmesi çok önemlidir. Biz de bu yazı
+          dizisinde performans testi söz konusu olduğunda en çok tercih edilen
+          araçlardan biri olan <strong>JMeter</strong> üzerinde yoğunlaşacağız.
+        </p>
+        <br />
+        <h3>JMeter’e Giriş</h3>
+        <img
+          src="img/JMeter ile Performans Testine İlk Adım/img-9.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Apache JMeter , farklı yazılım hizmetlerinin ve ürünlerinin
+          performansını test etmek, analiz etmek ve ölçmek için kullanılan bir
+          araçtır. Web uygulamalarını veya FTP uygulamalarını test etmek için
+          kullanılan <strong>saf Java açık kaynak (open-source)</strong> test
+          yazılımlardan biridir.
+          <strong>JDK 5 ve üstünü</strong> gerektirmektedir.
+        </p>
+        <p>
+          Jmeter, Apache Yazılım Vakfı’ndan (Apache Software Foundation) Stefano
+          Mazzocchi tarafından geliştirilmiştir. Apache JServ Projesinin(Apache
+          Tomcat projesi olarak adlandırılan) performansını test etmek için
+          yazılmıştır. Daha sonra, Apache Yazılım Vakfı GUI’yi geliştirmek ve
+          fonksiyonel test yeteneği de eklemek için JMeter’i yeniden
+          tasarlamıştır.
+        </p>
+        <p>
+          JMeter, Swing grafik API’sini kullanan grafik arayüzlü bir Java
+          masaüstü uygulamasıdır. Bu nedenle, Java sanal makinesini kabul eden
+          herhangi bir ortamda çalışabilir. Örneğin Windows, Linux, Mac vb.
+        </p>
+        <p>
+          JMeter öğrenmeden önce, Java programlama dilini temel olarak anlamış
+          olmak önemlidir. Bir Java projesinin farklı aşamalarındaki her tür
+          testi(regresyon, işlevsel, yük, performans vb.) gerçekleştirmek için
+          jMeter kullanılacağından, yazılım geliştirme ve yazılım test işlemleri
+          iyi bir şekilde kavranmalıdır.
+        </p>
+        <p>
+          Esas olarak web uygulamalarının performans testi, yük testi ve
+          fonksiyonel testini yürütmek için kullanılır. Ayrıca JMeter, bir web
+          sunucusuna binlerce sanal eşzamanlı kullanıcı oluşturarak sunucudaki
+          ağır yükleri simüle edebilir.
+        </p>
+        <br />
+        <h3>JMeter’in Özellikleri</h3>
+        <ol>
+          <li>Basit ve anlaşılması kolay bir GUI’ye sahiptir. <br /><br /></li>
+          <li>
+            JMeter, birçok farklı sunucu tipi için yük ve performans testi
+            yapabilir.
+            <p>
+              <i><strong>Web:</strong> HTTP, HTTPS, SOAP, JDBC, LDAP, JMS</i>
+            </p>
+            <p>
+              <i><strong>Mail:</strong> POP3 vb.</i>
+            </p>
+          </li>
+          <li>
+            Platform bağımsız bir tool’dur.
+            <p>
+              <strong>Linux/Unix’te</strong> “\JMETER_HOME\bin\<strong
+                >jmeter.sh”</strong
+              >
+              dosyası terminalde çalıştırılırken,
+            </p>
+            <p>
+              <strong>Windows</strong> için “\JMETER_HOME\bin\<strong
+                >jmeter.bat”</strong
+              >
+              dosyası terminalde çalıştırılır.
+            </p>
+          </li>
+          <li>
+            JMeter, test planlarını XML formatında saklar. Bu, bir metin editörü
+            kullanarak test planı oluşturabileceğiniz anlamına gelir.
+            <br />
+          </li>
+        </ol>
+        <br />
+        <h3>JMeter Testi Nasıl Çalışır?</h3>
+        <p>
+          <strong
+            >JMeter bir hedef sunucuya istek gönderip bir grup kullanıcıyı
+            simüle ederek hedef sunucunun işlevselliği ve performansını
+            (performance/functionality) test eden bir araçtır.
+          </strong>
+        </p>
+        <img
+          src="img/JMeter ile Performans Testine İlk Adım/img-10.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Test sırasında JMeter tarafından gerçekleştirilen bu farklı adımları
+          aşağıdaki gibi sıralayabiliriz.
+        </p>
+        <ol>
+          <li>
+            İlk olarak, bir istek oluşturur ve sunucuya gönderir. <br /><br />
+          </li>
+          <li>Bundan sonra, sunucudan gelen yanıtı işler. <br /><br /></li>
+          <li>
+            Son olarak, test sonucunu TXT, XML, JSON gibi çeşitli formatlarda
+            üretir. Böylece test mühendisi verileri analiz edebilir.
+            <br /><br />
+          </li>
+        </ol>
+        <h3>JMeter’in Avantajları</h3>
+        <p>
+          Apache JMeter açık kaynaklı yazılım, test sürecini kolaylaştırarak
+          büyük bir boşluğu doldurmaktadır. JMeter’in avantajlarından bazıları
+          şunlardır:
+        </p>
+        <ol>
+          <li>
+            <strong>Açık kaynak lisansı :</strong> JMeter tamamen ücretsizdir,
+            developer’in geliştirme için kaynak kodu kullanmasına,
+            gereksinimlerine göre değiştirmesine ve özelleştirmesine izin verir.
+            <br /><br />
+          </li>
+          <li>
+            <strong>Kullanıcı Dostu GUI :</strong> JMeter, test planı
+            oluşturmaya ve öğeleri yapılandırmaya yardımcı olan kapsamlı bir
+            GUI’ye sahiptir. JMeter’in kullanımı ve öğrenmesi son derece
+            kolaydır. <br /><br />
+          </li>
+          <li>
+            <strong>Platformdan bağımsız :</strong> JMeter % 100 saf Java
+            masaüstü uygulamasıdır. Böylece birden fazla platformda çalışabilir.
+            Örneğin Windows, Linux, Mac vb. <br /><br />
+          </li>
+          <li>
+            <strong>Test Sonucunu Görselleştir:</strong> JMeter aracılığıyla
+            kullanıcının performans test sonuçlarını anlamasına yardımcı olan
+            bir dizi rapor oluşturulur. Test sonucu grafik, tablo ve ağaç yapısı
+            gibi farklı biçimlerde görüntülenebilir. <br /><br />
+          </li>
+          <li>
+            <strong>Kolay kurulum :</strong> JMeter’i çalıştırmak için * .bat
+            dosyasını kopyalayıp çalıştırmanız yeterlidir. Kurulum gerektirmez.
+            <br /><br />
+          </li>
+          <li>
+            <strong>Son derece Genişletilebilir :</strong> Kendi testlerinizi
+            yazabilirsiniz. JMeter ayrıca testinizi genişletmenize olanak
+            tanıyan görselleştirme eklentilerini de destekler. <br /><br />
+          </li>
+          <li>
+            <strong>Çoklu test stratejisi :</strong> Temel olarak performans
+            testi için tasarlanmıştır, ancak yük testi, dağıtılmış test ve
+            fonksiyonel test gibi birçok test stratejisini destekler.
+            <br /><br />
+          </li>
+          <li>
+            <strong>Simülasyon :</strong> JMeter, eşzamanlı thread’ler ile
+            birden fazla kullanıcıyı simüle edebilir, test edilen web
+            uygulamasına karşı ağır bir yük oluşturabilir. <br /><br />
+          </li>
+          <li>
+            <strong>Çoklu protokol desteği :</strong> JMeter sadece web
+            uygulaması testini desteklemekle kalmaz, aynı zamanda veritabanı
+            sunucusu performansını da test edebilir. HTTP, JDBC, LDAP, SOAP, JMS
+            ve FTP gibi tüm temel protokoller JMeter tarafından desteklenir.
+            <br /><br />
+          </li>
+          <li>
+            <strong>Kayıt ve Oynatma:</strong> Kullanıcı etkinliğini tarayıcıya
+            kaydedin ve JMeter kullanarak bir web uygulamasını simüle edin.
+            <br /><br />
+          </li>
+          <li>
+            <strong>Script Testi :</strong> Jmeter, otomatik test için Bean
+            Shell & Selenium ile entegre edilebilir. <br /><br />
+          </li>
+        </ol>
+        <p>
+          Bu yazıda performans testi ve Jmeter’a giriş yaparak bir ön bilgiye
+          sahip olmuş olduk. Bir sonraki yazıda Jmeter kurulumu ve Jmeter ile
+          ilk performans testimizi yazmaya çalışacağız.
+        </p>
+        <p>Herkese keyifli ve sağlıklı haftalar :)</p>
+        <br /><br />
+        <div class="author">
+          <p>Ozan ESER</p>
+        </div>
+        <div class="post-meta">
+          <a href="blog-11.html" class="post-category cat-1">JMeter</a>
+          <span class="post-date" style="color: black;">20 Nisan, 2020</span>
+        </div>
+        <br /><br />
+        <div class="direction-buttons">
+          <a href="blog-10.html" class="previous">&#8617; Önceki</a>
+          <a href="blog-12.html" class="next">Sonraki &#8618;</a>
+        </div>
+        <div class="recommended-posts">
+          <div class="recomended-posts-header">
+            <h3>Benzer Yazılar</h3>
+          </div>
+          <div class="recommended-posts-body">
+            <div class="col-6 col-m-12 col-s-12">
+              <div class="recommended-post">
+                <a href="blog-12.html" class="recommended-post-img">
+                  <img
+                    src="img/JMeter Kurulum ve Farklı Çalıştırma Modları/img-1.png"
+                    alt=""
+                  />
+                </a>
+                <div class="recommended-post-body">
+                  <div class="post-meta">
+                    <a href="blog-12.html" class="post-category cat-1"
+                      >JMeter</a
+                    >
+                  </div>
+                  <h3 class="post-title">
+                    <a href="blog-12.html"
+                      >JMeter Kurulum ve Farklı Çalıştırma Modları
+                    </a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-m-12 col-s-12">
+              <div class="recommended-post">
+                <a href="blog-13.html" class="recommended-post-img">
+                  <img src="img/JMeter ile İlk Performans Testi/img-1.png" alt="" />
+                </a>
+                <div class="recommended-post-body">
+                  <div class="post-meta">
+                    <a href="blog-13.html" class="post-category cat-1"
+                      >JMeter</a
+                    >
+                  </div>
+                  <h3 class="post-title">
+                    <a href="blog-13.html">JMeter ile İlk Performans Testi</a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+    <!-- /section -->
+
+    <!-- Footer -->
+    <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="first-row">
+          <div class="col-6 col-s-12 col-m-6">
+            <h6>Hakkımızda</h6>
+            <p>
+              YazilimTestOtomasyonu.com
+              <strong>Yazılım Test Yaklaşımları ve Otomasyonu </strong>hakkında
+              bilinmesi gerekenlerin doğru adresi.
+            </p>
+          </div>
+
+          <div class="col-3 col-s-12 col-m-3">
+            <h6>Kategoriler</h6>
+            <ul class="footer-links">
+              <li><a href="softwaretesting.html">Yazılım Testi</a></li>
+              <li><a href="jmeter.html">Jmeter</a></li>
+              <li><a href="postman.html">Postman</a></li>
+              <li><a href="#">Cucumber</a></li>
+              <li><a href="#">SOAP UI</a></li>
+            </ul>
+          </div>
+
+          <div class="col-3 col-s-12 col-m-3">
+            <h6>Hızlı Erişimler</h6>
+            <ul class="footer-links">
+              <li><a href="#">Yazarlarımız</a></li>
+              <li><a href="contactus.html">Bize Ulaşın</a></li>
+              <li><a href="#">Kaynaklar</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="second-row">
+          <div class="col-m-8 col-s-6 col-8">
+            <p class="copyright-text">
+              Copyright &copy; 2020 All Rights Reserved by
+              YazilimTestOtomasyonu.com
+            </p>
+          </div>
+
+          <div class="col-m-4 col-s-6 col-4">
+            <ul class="social-icons">
+              <li>
+                <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+              </li>
+              <li>
+                <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- /Footer -->
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

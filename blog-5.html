@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Keywords"
+      content="Postman, JMeter, Yazılım Test, Yazılım Test Otomasyonu, Postman Backend Otomasyonu, Backend API Otomasyonu, JMeter Performans Testi, JMeter Yük Testi, Assertion, Jmeter Config Element"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="icon" href="img/icon2.png" type="image/ico" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>Yazılım Test Otomasyonu</title>
+  </head>
+
+  <body>
+    <!-- Scroll To Top Button -->
+    <button onclick="scrollToTop()" id="scrollToTop" title="Yukarı çık">
+      Yukarı Çık
+    </button>
+    <!-- /Scroll To Top Button -->
+
+    <!-- Off-Canvas Menu -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="hakkımızda.html">Hakkımızda</a>
+      <a href="#bizekatil">Bize Katıl</a>
+      <a href="#iletisim">İletişim</a>
+    </div>
+    <!-- /Off-Canvas Menu -->
+    <!-- Header -->
+    <header id="header">
+      <!-- Nav -->
+      <div id="nav">
+        <div class="container">
+          <!-- Logo -->
+          <div class="nav-logo">
+            <a href="index.html">
+              <img
+                src="img/icon2.png"
+                alt="Anasayfaya git"
+                width="50"
+                height="50"
+              />
+            </a>
+          </div>
+          <!-- /Logo -->
+          <!-- Nav-Menu -->
+          <div class="nav-menu">
+            <a href="index.html" class="nav-items">Anasayfa</a>
+            <a href="softwaretesting.html" class="nav-items nav-res"
+              >Yazılım Testi</a
+            >
+            <a href="postman.html" class="nav-items active">Postman</a>
+            <a href="jmeter.html" class="nav-items nav-res">JMeter</a>
+            <div class="dropdown">
+              <button onclick="clickableDropdown()" class="dropbtn nav-items">
+                Daha Fazlası <i class="fa fa-caret-down"></i>
+              </button>
+              <div id="clickable-content" class="dropdown-content">
+                <a href="jmeter.html">JMeter</a>
+                <a href="postman.html">Postman</a>
+                <a href="softwaretesting.html">Yazılım Testi</a>
+              </div>
+            </div>
+          </div>
+          <!-- /Nav-Menu -->
+
+          <!-- Off-Canvas Menu -->
+          <div class="nav-btns">
+            <button class="aside-btn" onclick="openNav()">
+              <i class="fa fa-bars" style="color: #19c6ca;"></i>
+            </button>
+          </div>
+          <!-- Off-Canvas Menu -->
+        </div>
+      </div>
+      <!-- /Nav-->
+    </header>
+    <!-- /Header -->
+
+    <!-- section -->
+    <div class="section">
+      <div class="container-blog">
+        <h2>Postman ile Backend API Otomasyonuna İlk Adım</h2>
+        <p>Herkese merhaba,</p>
+        <p>
+          Bu yazı dizisi boyunca sizlere Backend API otomasyonu, Postman
+          kullanımı ve Postman ile API otomasyonu geliştirilmesi hakkındaki
+          bilgi ve tecrübelerimi paylaşmaya çalışacağım. Keyifli bir yazı dizisi
+          olması dileğiyle…
+        </p>
+        <p>Hadi başlayalım o zaman!</p>
+        <img
+          src="img/Postman ile Backend API Otomasyonuna İlk Adım/img-1.jpeg"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Postman, kullanıcıların hem basit hem de karmaşık HTTP isteklerini
+          hızlı şekilde bir araya getirmelerini sağlayarak API’leri paylaşmak,
+          test etmek, geliştirmek, belgelendirmek ve monitör etmek için
+          kullanılan güçlü bir HTTP istemcisidir. Bu yazı dizisinde Postman’in
+          diğer özelliklerinden de bahsedilmekle birlikte genel olarak API test
+          otomasyonu üzerine yoğunlaşacağız. API nedir? REST nedir? API testi
+          nedir? Postman Nedir? Postman kurulum ve güncellemeleri, Postman
+          arayüz, Sending API request, collection, script, environments ve
+          globals, collection runs, monitors, mock servers, CI ve workspaces
+          kavramlarına cevap arayacağız.
+        </p>
+        <br />
+        <h3>1. API Nedir?</h3>
+        <p>
+          API (Application Programing Interfaces — Uygulama Programlama
+          Arayüzleri) en kısa hali ile iki yazılım veya veritabanı arasında
+          iletişim ve veri alışverişi sağlar. API sayesinde yazılım
+          geliştiricileri, ellerindeki verileri istedikleri sınırlılıkta dış
+          dünyayla paylaşabilmekte ve bu paylaşım sürecinde tüm kontrolleri
+          ellerinde tutabilmektedirler.
+        </p>
+        <img
+          src="img/Postman ile Backend API Otomasyonuna İlk Adım/img-2.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Yukarıdaki resimde görüldüğü gibi API, database ile uygulamalar(ios,
+          android, linux, windows ve web browser) arasında bir arayüzdür. Ayrıca
+          API business logic’in önündeki bir katmandır. API’ye gelen bir request
+          (istek) database’e gidebilir ve database’de işlenerek geri yönde bir
+          response (cevap) dönebilir. Bu durum verilerin kalıcı olması
+          isteniyorsa gerçekleşir. Yani API’ye gelen her request database’e
+          gitmez. Database’e gitmeden bir takım işlemler yapılıp response
+          dönebilir. Örneğin; veriler cache’de tutuluyor olabilir, validasyon
+          hataları olabilir, kodun içerisinden statik bilgiler gönderiliyor
+          olabilir.
+        </p>
+        <p>
+          Örneğin; cep telefonunuzda bir uygulama kullandığınızda, uygulama
+          internete bağlanır ve verileri bir sunucuya gönderir. Sunucu daha
+          sonra bu verileri alır, yorumlar, gerekli işlemleri yapar ve
+          telefonunuza geri gönderir. Uygulama daha sonra bu verileri yorumlar
+          ve okunabilir bir şekilde istediğiniz bilgileri size sunar. İşte tüm
+          bu işlemler API üzerinden gerçekleşir.
+        </p>
+        <br />
+        <h3>2. Request Nedir? Response Nedir?</h3>
+        <p>
+          API’ler request ve response’lardan oluşur. Belirlenen parametreler ve
+          metod ile bir request gönderilir ve gerekli işlemler yapıldıktan sonra
+          bir response döner.
+        </p>
+        <img
+          src="img/Postman ile Backend API Otomasyonuna İlk Adım/img-3.jpeg"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Örnek vermek gerekirse; bir uygulamaya ilk kez girdiğinizde
+          kaydolmanız gerekir. Ad, soyad, email, telefon numarası gibi çeşitli
+          parametreler girdikten sonra “Kaydol” butonuna basarsınız ve girilen
+          parametreler uygunsa uygulamaya kaydolursunuz, değilse bir hata mesajı
+          ile karşılaşırsınız.
+          <strong
+            >Aslında burada kaydol butonuna basıldığında Sign-Up API’sine
+            request atılır ve girilen parametrelerin uygun olup olmamasına göre
+            bir response döner. Böylelikle uygulamaya kaydolur veya bir hata
+            mesajı alırsınız.
+          </strong>
+        </p>
+        <br />
+        <h3>3. REST Nedir?</h3>
+        <p>
+          REST (REpresentational State Transfer), Türkçeye Temsili Durum
+          Aktarımı olarak çevrilebilir. REST client-server iletişimini HTTP
+          protokolü üzerinden sağlayan bir mimaridir. Client-server arasındaki
+          veri alışverişini SOAP, RPC gibi kompleks mimarilerle sağlamak yerine,
+          HTTP protokolü üzerinden sağlamaktadır. REST mimarisini kullanan
+          servislere genel olarak RESTful servis denilmektedir. RESTful
+          servisler SOAP ve RPC’nin aksine basit ve hafiftirler.
+        </p>
+        <img
+          src="img/Postman ile Backend API Otomasyonuna İlk Adım/img-4.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          REST mimarisindeki önemli noktalardan biri de her HTTP request’inde
+          yapılması istenilen işlemin HTTP metodlarıyla ifade edilmesidir (POST,
+          PUT, DELETE ,GET gibi). Böylece proxy ihtiyacı ortadan kalkmış oluyor
+          ve platform bağımsız yapılar kurmak kolaylaşıyor. Web API’lerinin
+          tamamı REST mimarisi üzerinde dizayn edilir. Bundan dolayı platform
+          bağımsız çalışır.
+        </p>
+        <p>
+          RESTful servislerin
+          <strong>birçok farklı response tipi</strong> olabilir. Bugünlerde
+          popüler olarak JSON kullanılıyor. Fakat XML, CSV veya amaca bağlı
+          olarak HTML bile kullanılabilir.
+        </p>
+        <br />
+        <h3>4. API Testi Nedir?</h3>
+        <br />
+        <p>
+          API isteklerinin, parameterlerini, işlevselliğini doğrulamak, sınır
+          değer analizi yapmak ve hataları ortaya çıkarmak için yapılan
+          testlerdir. Ayrıca ardarda çalışan API’lerin performansını ölçmek için
+          de iyi bir yöntemdir. API’lerle gelen dönüş değeri giriş koşuluna göre
+          kontrol edilir. API testleri, kullanılabilirlik, işlevsellik,
+          güvenilirlik, performans ve güvenlik konularında güvence
+          sağlamaktadır.
+        </p>
+        <img
+          src="img/Postman ile Backend API Otomasyonuna İlk Adım/img-5.jpeg"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          API testi, GUI testinden tamamen farklıdır ve temel olarak yazılım
+          mimarisinin iş mantığına odaklanır.
+          <strong>Bu test, bir uygulamanın görünümüne odaklanmaz. </strong>
+        </p>
+        <p>
+          API testi, API özelinde test edilmeye başlanır. Burada status code,
+          response time, response body, response headers gibi bir çok alan test
+          edilir. Sonrasında birden fazla API’den oluşan kullanıcı senaryoları
+          gerçeklenir.
+          <strong>Böylece uçtan uca (end to end) bir test gerçekleşir.</strong>
+        </p>
+        <img
+          src="img/Postman ile Backend API Otomasyonuna İlk Adım/img-6.png"
+          alt=""
+        />
+        <p>
+          API Testlerimizi otomatize ederken belirli prensipler çerçevesinde
+          yapmamız çok önemlidir. Bu prensipler arasında benim ilke edindiğim en
+          önemli maddeler:
+        </p>
+        <p>
+          <strong>· Empati Kurmak:</strong> Otomasyon yazarken öncelikle happy
+          senaryoyu düşünmeli ve bu duruma göre otomasyonu gerçeklemeliyiz.
+          Happy senaryoyu gerçekleştirdikten sonra
+          <strong>son kullanıcı (end-user)</strong> gibi düşünmeliyiz.
+          Böylelikle bir kullanıcının gerçekleştireceği bütün senaryoları
+          otomatize edebiliriz.
+        </p>
+        <p>
+          <strong>· Hız:</strong> API otomasyonunun en önemli özelliklerinden
+          biri hızlı olmasıdır. Bu sebeple gerçeklediğimiz bir otomasyon suiti
+          hızlı çalışmalıdır.
+        </p>
+        <p>
+          <strong>· Tekrar Edilebilir:</strong> Yazmış olduğumuz otomasyon suiti
+          birden fazla kez koşulabilmelidir.
+        </p>
+        <p>
+          <strong>· İzole Edilmiş:</strong> Test edilecek birimi izole etmeli ve
+          bağımlılıkları azaltmalıyız. Çünkü; karmaşık senaryolar veya hata
+          senaryoları kolayca yaratılamamaktadır. Bu da otomatize edilmesini
+          zorlaştırıyor. Otomatize edilse bile çok fazla zaman harcamamıza sebep
+          olabiliyor veya el ile müdahale gerektiriyor.
+        </p>
+        <p>
+          <strong>· Stabil:</strong> Yazmış olduğumuz otomasyon suiti stabil
+          şekilde çalışmalıdır. Yani bir çalıştırdığımızda 30 tane fail olan
+          case varken 2. Çalıştırdığımızda 100 tane fail olan case var ise bu
+          otomasyon suiti stabil çalışmamaktadır.
+        </p>
+        <p>
+          Tüm bu maddeler ışığında otomasyona doğru zamanda başlamakta çok
+          önemlidir.
+          <strong
+            >Gereksinimlerin sık sık değiştiği durumlarda API otomasyonu
+            gerçekleştirmek daha sonra çok fazla bakım maliyetine sebep
+            olabilir.</strong
+          >
+          Bu yüzden projenin gereksinimleri netleştiğinde otomasyon adımlarının
+          atılmasının daha doğru bir yaklaşımdır.
+        </p>
+        <p>
+          API Testi için kullanılan bir çok otomasyon aracı vardır. Bunlar
+          arasında; Jmeter, Postman, SoapUI, Katalon Studio, Tricentis Tosca,
+          Rest Assured, Karate DSL, Apigee ve Assertible sayılabilir. Bu yazı
+          dizisinde Postman’den bahsedilecektir.
+        </p>
+        <p>Bir sonraki yazımızda Postman kullanımı üzerinde duracağız.</p>
+        <p>Herkese keyifli ve sağlıklı haftalar :)</p>
+        <br /><br />
+        <div class="author">
+          <p>Ozan ESER</p>
+        </div>
+        <div class="post-meta">
+          <a href="blog-5.html" class="post-category cat-2">Postman</a>
+          <span class="post-date" style="color: black;">16 Mart, 2020</span>
+        </div>
+        <br /><br />
+        <div class="direction-buttons">
+          <a href="blog-4.html" class="previous">&#8617; Önceki</a>
+          <a href="blog-6.html" class="next">Sonraki &#8618;</a>
+        </div>
+        <div class="recommended-posts">
+          <div class="recomended-posts-header">
+            <h3>Benzer Yazılar</h3>
+          </div>
+          <div class="recommended-posts-body">
+            <div class="col-6 col-m-12 col-s-12">
+              <div class="recommended-post">
+                <a href="blog-6.html" class="recommended-post-img">
+                  <img
+                    src="img/Postman Kurulum ve Arayüzü Hakkında Ön İzleme/img-1.png"
+                    alt=""
+                  />
+                </a>
+                <div class="recommended-post-body">
+                  <div class="post-meta">
+                    <a href="blog-6.html" class="post-category cat-2"
+                      >Postman</a
+                    >
+                  </div>
+                  <h3 class="post-title">
+                    <a href="blog-6.html"
+                      >Postman Kurulum ve Arayüzü Hakkında Ön İzleme
+                    </a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-m-12 col-s-12">
+              <div class="recommended-post">
+                <a href="blog-7.html" class="recommended-post-img">
+                  <img src="img/Postman ile Backend API Otomasyonunda Kod Mimarisi/img-1.png" alt="" />
+                </a>
+                <div class="recommended-post-body">
+                  <div class="post-meta">
+                    <a href="blog-7.html" class="post-category cat-2"
+                      >Postman</a
+                    >
+                  </div>
+                  <h3 class="post-title">
+                    <a href="blog-7.html"
+                      >Postman ile Backend API Otomasyonunda Kod Mimarisi
+                    </a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+    <!-- /section -->
+
+    <!-- Footer -->
+    <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="first-row">
+          <div class="col-6 col-s-12 col-m-6">
+            <h6>Hakkımızda</h6>
+            <p>
+              YazilimTestOtomasyonu.com
+              <strong>Yazılım Test Yaklaşımları ve Otomasyonu </strong>hakkında
+              bilinmesi gerekenlerin doğru adresi.
+            </p>
+          </div>
+
+          <div class="col-3 col-s-12 col-m-3">
+            <h6>Kategoriler</h6>
+            <ul class="footer-links">
+              <li><a href="softwaretesting.html">Yazılım Testi</a></li>
+              <li><a href="jmeter.html">Jmeter</a></li>
+              <li><a href="postman.html">Postman</a></li>
+              <li><a href="#">Cucumber</a></li>
+              <li><a href="#">SOAP UI</a></li>
+            </ul>
+          </div>
+
+          <div class="col-3 col-s-12 col-m-3">
+            <h6>Hızlı Erişimler</h6>
+            <ul class="footer-links">
+              <li><a href="#">Yazarlarımız</a></li>
+              <li><a href="contactus.html">Bize Ulaşın</a></li>
+              <li><a href="#">Kaynaklar</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="second-row">
+          <div class="col-m-8 col-s-6 col-8">
+            <p class="copyright-text">
+              Copyright &copy; 2020 All Rights Reserved by
+              YazilimTestOtomasyonu.com
+            </p>
+          </div>
+
+          <div class="col-m-4 col-s-6 col-4">
+            <ul class="social-icons">
+              <li>
+                <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+              </li>
+              <li>
+                <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- /Footer -->
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Keywords"
+      content="Postman, JMeter, Yazılım Test, Yazılım Test Otomasyonu, Postman Backend Otomasyonu, Backend API Otomasyonu, JMeter Performans Testi, JMeter Yük Testi, Assertion, Jmeter Config Element"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="icon" href="img/icon2.png" type="image/ico" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>Yazılım Test Otomasyonu</title>
+  </head>
+  <body>
+    <!-- Scroll To Top Button -->
+    <button onclick="scrollToTop()" id="scrollToTop" title="Yukarı çık">
+      Yukarı Çık
+    </button>
+    <!-- /Scroll To Top Button -->
+
+    <!-- Off-Canvas Menu -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="hakkımızda.html">Hakkımızda</a>
+      <a href="#bizekatil">Bize Katıl</a>
+      <a href="#iletisim">İletişim</a>
+    </div>
+    <!-- /Off-Canvas Menu -->
+    <!-- Header -->
+    <header id="header">
+      <!-- Nav -->
+      <div id="nav">
+        <div class="container">
+          <!-- Logo -->
+          <div class="nav-logo">
+            <a href="index.html">
+              <img
+                src="img/icon2.png"
+                alt="Anasayfaya git"
+                width="50"
+                height="50"
+              />
+            </a>
+          </div>
+          <!-- /Logo -->
+          <!-- Nav-Menu -->
+          <div class="nav-menu">
+            <a href="index.html" class="nav-items">Anasayfa</a>
+            <a href="softwaretesting.html" class="nav-items active"
+              >Yazılım Testi</a
+            >
+            <a href="postman.html" class="nav-items nav-res">Postman</a>
+            <a href="jmeter.html" class="nav-items nav-res">JMeter</a>
+            <div class="dropdown">
+              <button onclick="clickableDropdown()" class="dropbtn nav-items">
+                Daha Fazlası <i class="fa fa-caret-down"></i>
+              </button>
+              <div id="clickable-content" class="dropdown-content">
+                <a href="jmeter.html">JMeter</a>
+                <a href="postman.html">Postman</a>
+                <a href="softwaretesting.html">Yazılım Testi</a>
+              </div>
+            </div>
+          </div>
+          <!-- /Nav-Menu -->
+
+          <!-- Off-Canvas Menu -->
+          <div class="nav-btns">
+            <button class="aside-btn" onclick="openNav()">
+              <i class="fa fa-bars" style="color: #19c6ca;"></i>
+            </button>
+          </div>
+          <!-- Off-Canvas Menu -->
+        </div>
+      </div>
+      <!-- /Nav-->
+    </header>
+    <!-- /Header -->
+
+    <!-- section -->
+    <div class="section">
+      <div class="container-blog">
+        <h2>Yazılım Test Efsaneleri vs Prensipleri</h2>
+        <img src="img/yazılım test efsaneleri/img-1.jpeg" alt="" />
+        <br /><br />
+        <p>
+          Mevcut tüm senaryoları test edemediğiniz bir yazılımı nasıl piyasaya
+          sürebilirsiniz? Piyasaya sürüldükten sonra test edemediğiniz bir
+          durumun müşteri ortamında keşfedilmesinden korkmuyor musunuz? Bu iki
+          soru, sağladığımız işin kalitesi ne olursa olsun, her test döngüsünde
+          en büyük korkumuzdur. Aslında üzerimizde bu korkuyu oluşturan şey
+          doğru sanılan yanlışlar yani <strong>test efsaneleridir</strong>. Bir
+          uygulamaya dokunmadan önce test efsanelerini bir yana bırakarak akılda
+          tutmamız gereken en önemli konu
+          <strong>temel test prensipleridir</strong>. Bilinen test efsanelerinin
+          aksine test prensipleri gerçekçi ve doğrudur. Aşağıda, test efsaneleri
+          ve test prensiplerinden bahsedilmiştir.
+        </p>
+        <p>
+          <strong
+            >1. Test Efsanesi: Test edilen bir yazılım hatasız olmalıdır.
+          </strong>
+        </p>
+        <p>
+          <strong
+            >Test Prensibi: Hiçbir uygulama % 100 hatasız değildir. Test yapmak,
+            yazılımda bug olmadığını göstermez. Testin amacı, yazılımda
+            hataların olduğunu göstermektir; yazılımda hata kalmadığını
+            ispatlamak değildir.</strong
+          >
+          Bu madde, müşterilerin, proje yöneticilerinin ve yönetim ekibinin
+          inandığı çok yaygın bir efsanedir.
+        </p>
+        <img src="img/yazılım test efsaneleri/img-2.jpeg" alt="" />
+        <br /><br />
+        <p>
+          Basit bir hata Intel Pentium işlemcisinde görülmüştür.
+          Bilgisayarınızın hesap makinesine aşağıdaki denklemi girin:
+        </p>
+        <p>(4195835/3145727) * 3145727–4195835</p>
+        <p>
+          Cevap sıfırsa, bilgisayarınız yeni model bir intel pentium işlemciye
+          sahip demektir. Başka bir sonuç alırsanız,
+          <strong>kayan nokta bölme hatası</strong> olan eski bir Intel Pentium
+          işlemciniz vardır. Bu hata Pentium FDIV bug olarak bilinmektedir.
+        </p>
+        <p>
+          <strong
+            >2. Test Efsanesi: Ürün tam olarak gelişmemişse test başlatılamaz.
+          </strong>
+        </p>
+        <p>
+          Test Prensibi: Hiç kuşkusuz, testler kaynak koduna bağlıdır, ancak
+          gereksinimleri gözden geçirmek ve test senaryoları geliştirmek,
+          geliştirilen koddan bağımsızdır.
+          <strong>Test, SDLC süreci boyunca yapılmalıdır.</strong> Waterfall
+          gibi geleneksel yazılım geliştirme modellerinde test yalnızca yazılım
+          geliştirmenin belirli aşamalarından sonra yapılır ve test ekibi
+          SDLC’de yer almaz. Bu, iyi kalitede bir yazılım üretmek için doğru
+          yaklaşım değildir. Etkili bir test yapabilmek için test ekibi
+          gereksinimler(requirement) aşamasından yazılımın uygulama aşamasına
+          kadar sürece dahil edilmelidir.
+          <strong>Teste mümkün olduğunca erken başlanmalıdır.</strong> Kusurlu
+          tasarımları önlemek için bu çok önemlidir.
+        </p>
+        <p>
+          <strong
+            >3. Test Efsanesi: Yazılımı komple test etmek mümkündür.
+          </strong>
+        </p>
+        <p>
+          <strong>Test Prensibi: Yazılımı %100 test etmek imkansızdır.</strong>
+          Yazılımı tüm girdi ve çıktı kombinasyonları ile test etmek, projenin
+          zaman ve bütçe kısıtları sebebiyle mümkün değildir. Önemli olan risk
+          analizi ile yazılımdaki riskli alanların tespit edilip,
+          önceliklendirmelerin yapılması ve bu alanların normalden daha fazla
+          test edilmesidir.
+        </p>
+        <p>
+          <strong
+            >4. Test Efsanesi: Bir test mühendisinin görevi yalnızca hataları
+            bulmaktır.
+          </strong>
+        </p>
+        <p>
+          <strong>Test Prensibi:</strong> Yazılımdaki hataları bulmak test
+          mühendisinin görevidir ancak bir test mühendisi aynı zamanda üzerinde
+          çalıştığı yazılımın uzmanıdır. Yazılım geliştiriciler yalnızca
+          kendilerine atanan belirli bileşen veya alandan sorumluyken test
+          mühendisleri yazılımın genel olarak nasıl çalıştığını, bağımlılıkların
+          ne olduğunu ve bir modülün diğer bir modül üzerindeki etkilerinin
+          neler olduğunu bilir. Bu sebeple tasarım ve sistemin
+          iyileştirilmesinde en önemli görev test mühendislerinindir.
+        </p>
+        <p>
+          <strong
+            >5. Test Efsanesi: Herhangi biri bir yazılım uygulamasını test
+            edebilir.
+          </strong>
+        </p>
+        <p>
+          <strong>Test Prensibi:</strong> IT endüstrisi dışındaki insanlar,
+          herhangi birinin yazılımı test edebileceğini ve yazılımı test etmenin
+          yaratıcı bir iş olmadığını düşünüyor ve hatta buna inanıyorlar. Ancak,
+          biz test mühendisleri bunun bir efsane olduğunu çok iyi biliyoruz.
+          <strong
+            >Alternatif senaryoları düşünüp, yazılımı çökertmeye çalışarak olası
+            hataları keşfetmek yaratıcı bir iştir.</strong
+          >
+        </p>
+        <img src="img/yazılım test efsaneleri/img-3.jpeg" alt="" />
+        <br /><br />
+        <p>
+          <strong>6. Test Efsanesi: Yazılımı test etmek çok pahalıdır. </strong>
+        </p>
+        <p>
+          <strong>Test Prensibi:</strong> Yazılım geliştirme sırasında yapılan
+          test maliyeti, test yapılmadığında harcanan bakım veya düzeltme
+          maliyetine göre çok daha azdır. Erken test, hem zamandan hem de
+          maliyetten tasarruf sağlar. Ancak test etmeden maliyeti düşürmek,
+          yazılım uygulamasının yanlış tasarlanmasına neden olarak ürünü işe
+          yaramaz bir hale getirebilir.
+        </p>
+        <p><strong>7. Test Efsanesi: Test zaman alıcıdır. </strong></p>
+        <p>
+          <strong>Test Prensibi:</strong> SDLC süreci boyunca test yapmak asla
+          zaman alıcı bir süreç değildir. Testler sırasında tespit edilen
+          hatanın kaynağına inmek ve hatayı düzeltmek zaman alan ancak verimli
+          bir faaliyettir.
+        </p>
+        <p>
+          <strong
+            >8. Test Efsanesi: Test sonucunda tespit edilemeyen hatalar test
+            ekibinden kaynaklanmaktadır.
+          </strong>
+        </p>
+        <p>
+          <strong>Test Prensibi:</strong> Test yapıldıktan sonra bile uygulamada
+          kalan hatalar için test ekibini suçlamak doğru bir yaklaşım değildir.
+          Zaman baskısı, sınırlı kaynaklar, gereksinimler ve test stratejisi
+          test ekibi tarafından hataların gözden kaçırılmasına neden olabilir.
+        </p>
+        <p>
+          <strong
+            >9. Test Efsanesi: Test ekipleri bir ürünün kalitesinden sorumlu
+            olmalıdır.
+          </strong>
+        </p>
+        <p>
+          <strong>Test Prensibi:</strong> Ürün kalitesinden yalnızca test
+          mühendislerinin veya test ekibinin sorumlu olduğu fikri çok yaygın bir
+          yanlıştır. Bir yazılım test mühendisi olarak, her şeyi test
+          edemezsiniz ve ürünün kalitesinden sadece siz sorumlu değilsiniz. Test
+          ekipleri olarak siz kalite kontrolden sorumlusunuz. Ürünün
+          kalitesinden SDLC süreci içerisinde bulunan her takım üyesi
+          sorumludur. Bu yüzden <strong>kaliteyi garanti edemezsiniz. </strong>
+        </p>
+        <p>
+          <strong
+            >10. Test Efsanesi: Test Otomasyonu, teste harcanan zamanın azaldığı
+            ve kullanımının mümkün olduğu her yerde kullanılmalıdır.
+          </strong>
+        </p>
+        <p>
+          <strong>Test Prensibi:</strong> Evet, Test Otomasyonu’nun test
+          süresini kısalttığı doğrudur. Ancak yazılım geliştirme sırasında test
+          otomasyonu’nu herhangi bir zamanda başlatmak mümkün değildir. Test
+          Otomasyonu, yazılım manuel olarak test edildiğinde ve bir dereceye
+          kadar stabil olduğunda başlatılmalıdır. Ayrıca gereksinimler değişmeye
+          devam ederse test otomasyonu hiçbir zaman kullanılamaz.
+        </p>
+        <p>
+          <strong
+            >11. Test Efsanesi: Yazılımı test ederken her bölüme eşit süreyi
+            ayırın.
+          </strong>
+        </p>
+        <p>
+          <strong
+            >Test Prensibi: Yazılımın bazı bölümlerine öncelik verin.</strong
+          >
+          Yazılımda bazı kritik bölümler varsa, bu bölümlerin en yüksek önceliği
+          verin ve mümkün olduğunca erken test edildiğinden emin olun.
+          <strong>Hatalar yazılımın belli alanlarında yoğunlaşır.</strong>
+          Yazılımın tüm parçaları (modülleri) dikkate alınacak olunursa,
+          hataların büyük çoğunluğunun bu parçaların küçük bir kısmında
+          bulunacağı görülecektir. Bu durumla genellikle Pareto analizi ile
+          açıklanır. Pareto analizi, karar almada kullanılan bir istatistik
+          tekniğidir. Kalitenin iyileştirilmesinde sorunların büyük bir
+          çoğunluğunu (örnek % 80) nedenlerin sadece az bir kısmı tarafından
+          üretilmektedir (örnek % 20).
+        </p>
+        <img src="img/yazılım test efsaneleri/img-4.jpeg" alt="" />
+        <br /><br />
+        <p>
+          <strong
+            >12. Test Efsanesi: Ürünü geliştirilen ortamda test edin.
+          </strong>
+        </p>
+        <p>
+          <strong>Test Prensibi: Ürünü farklı ortamlarda test edin.</strong>
+          Ürün kullanıcının kullanabileceği bütün ortamlarda test edilmelidir.
+        </p>
+        <p>
+          Bu durumla özellikle mobil dünyada hepimizin karşılaşmışızdır. Yazılım
+          geliştirme süreci tamamlanmış ve similatör üzerinde yapılan testlerde
+          hiçbir sorunla karşılaşılmamış bir yazılım, farklı versiyon ve model
+          cihazlarda similatörde yapılan testlerin aksine farklı sonuçlar
+          doğurabilmektedir. Crash ve tasarım hatası gibi sorunlara sebep
+          olabilmektedir.
+        </p>
+        <p>
+          <strong
+            >13. Test Efsanesi: Ürüne, ürünün sahibi gözüyle bakın.
+          </strong>
+        </p>
+        <p>
+          <strong>Test Prensibi: Ürüne müşteri gözüyle bakın.</strong> Sistemi
+          normal kullanıcılar olarak kullanmaya çalışmalıyız. Bu konuyu bir
+          deney yaparak gözlemlemenizi öneririm. Uygulama hakkında hiçbir fikri
+          olmayan bir kişinin belli bir süre uygulamayı kullandıktan sonra
+          karşılaştığı hataların sayısını gördüğünüzde çok şaşıracaksınız. Bunu
+          yapmak aslında sistemi bir dizi beklenmedik teste tabi tutmaktır. Bu
+          durum tamamen informaldir.
+        </p>
+        <p>
+          <strong
+            >14. Test Efsanesi: Development ekibi test yapmalıdır.
+          </strong>
+        </p>
+        <p>
+          <strong
+            >Test Prensibi: Yazılım geliştirme ekibi yazılımı test etmekten
+            kaçınmalıdır. (Birim testi hariç.)</strong
+          >
+          Test, her zaman test ekibi tarafından gerçekleştirilmelidir. Yazılım
+          geliştirme yazılımı asla kendileri test etmemelidir. Bunun nedeni,
+          yazılımı oluşturmak için belirli bir saat harcadıktan sonra,
+          bilinçsizce oluşan sahiplenme duygusu sistemdeki hata ve eksikleri
+          görmeyi engelleyebilir. Test mühendisi ürüne karşı yıkıcı bir yaklaşım
+          sergilemelidir. Yazılım geliştiriciler birim testi ve entegrasyon
+          testi yapabilirler ancak yazılım testi test ekibi tarafından
+          yapılmalıdır. Yazılım geliştiricilerin kendi kodlarını test etmesi her
+          organizasyon için gerçekten kötü bir fikirdir.
+        </p>
+        <br /><br />
+        <div class="author">
+          <p>Ozan ESER</p>
+        </div>
+        <div class="post-meta">
+          <a href="blog-3.html" class="post-category cat-3">Yazılım Testi</a>
+          <span class="post-date" style="color: black;">12 Şubat, 2020</span>
+        </div>
+        <br /><br />
+        <div class="direction-buttons">
+          <a href="blog-2.html" class="previous">&#8617; Önceki</a>
+          <a href="blog-4.html" class="next">Sonraki &#8618;</a>
+        </div>
+        <div class="recommended-posts">
+          <div class="recomended-posts-header">
+            <h3>Benzer Yazılar</h3>
+          </div>
+          <div class="recommended-posts-body">
+            <div class="col-6 col-m-12 col-s-12">
+              <div class="recommended-post">
+                <a href="blog-4.html" class="recommended-post-img">
+                  <img src="img/yazılım test seviyeleri/1_YC4r9Uj6Kn3cHXI1GguJ0A.png" alt="" />
+                </a>
+                <div class="recommended-post-body">
+                  <div class="post-meta">
+                    <a href="blog-4.html" class="post-category cat-3">Yazılım Testi</a>
+                  </div>
+                  <h3 class="post-title">
+                    <a href="blog-4.html">Yazılım Test Seviyeleri </a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-m-12 col-s-12">
+              <div class="recommended-post">
+                <a href="blog-2.html" class="recommended-post-img">
+                  <img
+                    src="img/yazılım kalite ve teste bakış/img-1.jpeg"
+                    alt=""
+                  />
+                </a>
+                <div class="recommended-post-body">
+                  <div class="post-meta">
+                    <a href="blog-2.html" class="post-category cat-3"
+                      >Yazılım Testi</a
+                    >
+                  </div>
+                  <h3 class="post-title">
+                    <a href="blog-2.html">Yazılım, Kalite ve Teste Bakış </a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+    <!-- /section -->
+
+    <!-- Footer -->
+    <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="first-row">
+          <div class="col-6 col-s-12 col-m-6">
+            <h6>Hakkımızda</h6>
+            <p>
+              YazilimTestOtomasyonu.com
+              <strong>Yazılım Test Yaklaşımları ve Otomasyonu </strong>hakkında bilinmesi
+              gerekenlerin doğru adresi.
+            </p>
+          </div>
+
+          <div class="col-3 col-s-12 col-m-3">
+            <h6>Kategoriler</h6>
+            <ul class="footer-links">
+              <li><a href="softwaretesting.html">Yazılım Testi</a></li>
+              <li><a href="jmeter.html">Jmeter</a></li>
+              <li><a href="postman.html">Postman</a></li>
+              <li><a href="#">Cucumber</a></li>
+              <li><a href="#">SOAP UI</a></li>
+            </ul>
+          </div>
+
+          <div class="col-3 col-s-12 col-m-3">
+            <h6>Hızlı Erişimler</h6>
+            <ul class="footer-links">
+              <li><a href="#">Yazarlarımız</a></li>
+              <li><a href="contactus.html">Bize Ulaşın</a></li>
+              <li><a href="#">Kaynaklar</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="second-row">
+          <div class="col-m-8 col-s-6 col-8">
+            <p class="copyright-text">
+              Copyright &copy; 2020 All Rights Reserved by
+              YazilimTestOtomasyonu.com
+            </p>
+          </div>
+
+          <div class="col-m-4 col-s-6 col-4">
+            <ul class="social-icons">
+              <li>
+                <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+              </li>
+              <li>
+                <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- /Footer -->
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

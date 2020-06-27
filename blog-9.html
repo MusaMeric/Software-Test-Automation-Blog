@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Keywords"
+      content="Postman, JMeter, Yazılım Test, Yazılım Test Otomasyonu, Postman Backend Otomasyonu, Backend API Otomasyonu, JMeter Performans Testi, JMeter Yük Testi, Assertion, Jmeter Config Element"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="icon" href="img/icon2.png" type="image/ico" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>Yazılım Test Otomasyonu</title>
+  </head>
+
+  <body>
+    <!-- Scroll To Top Button -->
+    <button onclick="scrollToTop()" id="scrollToTop" title="Yukarı çık">
+      Yukarı Çık
+    </button>
+    <!-- /Scroll To Top Button -->
+
+    <!-- Off-Canvas Menu -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="hakkımızda.html">Hakkımızda</a>
+      <a href="#bizekatil">Bize Katıl</a>
+      <a href="#iletisim">İletişim</a>
+    </div>
+    <!-- /Off-Canvas Menu -->
+    <!-- Header -->
+    <header id="header">
+      <!-- Nav -->
+      <div id="nav">
+        <div class="container">
+          <!-- Logo -->
+          <div class="nav-logo">
+            <a href="index.html">
+              <img
+                src="img/icon2.png"
+                alt="Anasayfaya git"
+                width="50"
+                height="50"
+              />
+            </a>
+          </div>
+          <!-- /Logo -->
+          <!-- Nav-Menu -->
+          <div class="nav-menu">
+            <a href="index.html" class="nav-items">Anasayfa</a>
+            <a href="softwaretesting.html" class="nav-items nav-res">Yazılım Testi</a>
+            <a href="postman.html" class="nav-items active">Postman</a>
+            <a href="jmeter.html" class="nav-items nav-res">JMeter</a>
+            <div class="dropdown">
+              <button onclick="clickableDropdown()" class="dropbtn nav-items">
+                Daha Fazlası <i class="fa fa-caret-down"></i>
+              </button>
+              <div id="clickable-content" class="dropdown-content">
+                <a href="jmeter.html">JMeter</a>
+                <a href="postman.html">Postman</a>
+                <a href="softwaretesting.html">Yazılım Testi</a>
+              </div>
+            </div>
+          </div>
+          <!-- /Nav-Menu -->
+
+          <!-- Off-Canvas Menu -->
+          <div class="nav-btns">
+            <button class="aside-btn" onclick="openNav()">
+              <i class="fa fa-bars" style="color: #19c6ca;"></i>
+            </button>
+          </div>
+          <!-- Off-Canvas Menu -->
+        </div>
+      </div>
+      <!-- /Nav-->
+    </header>
+    <!-- /Header -->
+
+    <!-- section -->
+    <div class="section">
+      <div class="container-blog">
+        <h2>Postman ile Backend API Otomasyonunda İş Akışları (Workflows)</h2>
+        <p>Herkese merhaba,</p>
+        <p>
+          Serinin beşinci yazısında sizlerle Postman ile backend API
+          otomasyonunda collection runner, iş akışları, rastgele veri oluşturma,
+          requestler arasında diziler ve nesnelerin nasıl iletildiği gibi önemli
+          konular hakkında bilgiler vereceğim. Keyifli bir yazı olması
+          dileğiyle…
+        </p>
+        <p>Hadi başlayalım o zaman!</p>
+        <img src="img/postman workflow/img-1.png" alt="" />
+        <br /><br />
+        <h3>1. Collection Runner</h3>
+        <p>
+          En kısa haliyle, collection runner test senaryolarımızı otomatize
+          ederek yürütmemizi ve sonuçları ayrıntılı şekilde gözlemlemizi
+          sağlamaktadır.
+        </p>
+        <p>
+          Collection, test senaryolarımızı gerçeklediğimiz bir dizi request
+          grubundan oluşur. Bir collection 1 tane request’ten oluşabileceği gibi
+          1000 tane request’ten de oluşabilir.
+          <strong
+            >API testini otomatize etmek istiyorsanız bir collection’ı
+            yürütmeniz gerekmektedir. Collection’ı yürüttüğünüzde altında
+            bulunan bütün request’ler sırayla çalışmaktadır. (Eğer belirli
+            durumlarda atlamak istediğiniz requestler varsa veya bu test
+            senaryosunu sonlandırmak istediğiniz durumlar olursa</strong
+          >
+          <i>postman.setNextRequest("request_name");</i> işlevi ile bunu kolayca
+          gerçekleştirebilirsiniz.
+        </p>
+        <p>
+          <strong
+            >Pre request ve test script’lerini kullandığınızda test suite’leri
+            oluşturabilir, API request’leri arasında veri iletebilir. Gerçek API
+            kullanım durumlarını yansıtan iş akışları oluşturabilirsiniz.
+          </strong>
+        </p>
+        <p>Collection’ı çalıştırmak için;</p>
+        <ol>
+          <li>Header bar’da bulunan “Runner” butonuna basın.</li>
+          <li>Yürütmek istediğiniz collection’ı seçin.</li>
+          <li>
+            Environment seçin. (Diğer seçenekleri kendi kullanımınıza göre
+            değiştirebilirsiniz.)
+          </li>
+          <li>Run Collection butonuna basarak test senaryonuzu yürütün.</li>
+        </ol>
+
+        <img src="img/postman workflow/img-2.png" alt="" />
+        <br /><br />
+        <p>
+          <strong>Not:</strong> Postman’deki test senaryolarınızı Newman
+          yardımıyla komut satırından da yürütebilir hatta Jenkins’e entegre
+          edebilirsiniz. Bu konuya bir başka yazıda değineceğim.
+        </p>
+        <p>
+          <strong
+            >Bu süreçte REST API’leri ile örnekler yapmak isterseniz
+            <a href="https://reqres.in/" style="font-weight: bold;"
+              >https://reqres.in/</a
+            >
+            sitesini takip edebilirsiniz. Bu şekilde request’ler atıp
+            response’ları Postman üzerinden test edebilirsiniz.
+          </strong>
+        </p>
+        <br />
+        <h3>2. İş Akışları (Workflows)</h3>
+        <p>
+          Postman’de bildiğiniz gibi collection’ları otomatikleştirmek için
+          Collection Runner ve Newman’i kullanıyoruz.
+        </p>
+        <p>
+          Aşağıda iş akışını değiştiren kod parçaları sadece bir sonraki
+          request’e etki eder. Bu sebeple Postman uygulaması içerisinden
+          çalıştırılan bir request’e etki etmez. Hatta pre request script’e
+          yazılsa bile mevcut request’i atlamaz.
+        </p>
+        <p>
+          Bu kod parçalarının en çok kullanıldığı durum; bir koşul
+          gerçekleştiğinde veya gerçekleşmediğinde collection içerisindeki
+          sıradaki request’e değil, başka bir request’e atlamak için kullanılır.
+        </p>
+        <p>
+          Yürütmek istediğiniz request hangisi olacak ise request’in ismi
+          yazılarak o request’e atlanır.
+        </p>
+        <img src="img/postman workflow/img-3.JPG" alt="" />
+        <br /><br />
+        <p>
+          Request’i ve Collection Run durdurulmak istenirse aşağıdaki kod
+          parçası çalışırılır.
+        </p>
+        <img src="img/postman workflow/img-4.JPG" alt="" />
+        <br /><br />
+        <h3>3. Rastgele Veri Nasıl Oluşturulur?</h3>
+        <p>
+          <strong>Birinci Opsiyon:</strong> Postman’in rastgele değer üreten
+          jeneratörlerini kullanmaktır.
+        </p>
+        <p>
+          Benzersiz bir dize (her istek için) oluşturmanız ve bunu request
+          body’ye iletmeniz gerekirse bunu <strong>{{guid}}</strong> veya
+          <strong>{{timestamp}}</strong> ile yapabilirsiniz.
+          <strong
+            >{{guid}} otomatik olarak Postman tarafından üretilirken,
+            {{timestamp}} bir verinin üretildiği tarihi baz alarak değer üretir.
+            İkisi de eşsizdir.</strong
+          >
+        </p>
+        <p>
+          Aşağıdaki örnekte, request her yürütüldüğünde benzersiz bir GroupName
+          oluşturulur.
+        </p>
+        <img src="img/postman workflow/img-5.JPG" alt="" />
+        <br /><br />
+        <p>Aşağıdaki gibi bir değer üretilecektir.</p>
+        <img src="img/postman workflow/img-6.JPG" alt="" />
+
+        <br /><br />
+        <p>
+          <strong
+            >Birinci opsiyonun dezavantajı, bu özel değişkenler pre request veya
+            test script’lerinde kullanılmaz. Buna ek olarak, request başına
+            yalnızca bir kez üretildiklerinden bir request’te birden fazla
+            rastgele değer üretemezler. {{$guid}}
+          </strong>
+        </p>
+        <br />
+        <p>
+          <strong>İkinci Opsiyon:</strong> JavaScript’in rastgele değer üreten
+          jeneratörünü kullanmaktır.
+        </p>
+        <p>
+          Aşağıdaki örnekte belirli bir aralıkta rastgele tamsayı üreten bir
+          fonksiyonu görüyorsunuz.
+        </p>
+        <img src="img/postman workflow/img-7.JPG" alt="" />
+        <br /><br />
+        <p>
+          Fonksiyonu bir değişkene atayıp bu değişkeni konsole yazdırarak sonucu
+          görebilirsiniz.
+        </p>
+        <img src="img/postman workflow/img-8.JPG" alt="" />
+        <br /><br />
+        <p>
+          Aşağıda rastgele dizeler oluşturmak için kullanabileceğiniz bir
+          fonksiyon görüyorsunuz.
+        </p>
+        <img src="img/postman workflow/img-9.JPG" alt="" />
+        <br /><br />
+        <p>
+          Fonksiyonu bir değişkene atayıp bu değişkeni konsole yazdırarak sonucu
+          görebilirsiniz.
+        </p>
+        <img src="img/postman workflow/img-10.JPG" alt="" />
+        <br /><br />
+
+        <h3>4. Request’ler Arasında Diziler ve Nesneler Nasıl İletilir?</h3>
+        <p>
+          Response’un JSON formatında olduğunu varsayarsak, aşağıdaki şekilde
+          response’u bir değişkene atayabiliriz.
+        </p>
+        <img src="img/postman workflow/img-11.JPG" alt="" />
+        <br /><br />
+        <p>
+          Bundan sonra tüm response’u set edebilirsiniz. Örneğin aşağıdaki
+          şekilde bir ortam değişkenine atanabilir.
+        </p>
+        <img src="img/postman workflow/img-12.JPG" alt="" />
+        <br /><br />
+        <p>Bir sonraki istekte verileri aşağıdaki formatta alabiliriz.</p>
+        <p>Request body’de kullanılacaksa; <strong>{{myData}}</strong></p>
+        <p>
+          <strong
+            >var myData = JSON.parse(pm.environment.get(‘myData’));</strong
+          >
+        </p>
+        <br />
+        <p>
+          <strong
+            >Not: Nesneleri ve dizileri bir değişkene kaydetmeden önce
+            JSON.stringfy() komutunu kullanmamız gerekir. Aksi takdirde Postman
+            veya Newman sürümüne bağlı olarak çalışmayabilir.
+          </strong>
+        </p>
+        <p>
+          <strong
+            >Değerler string, integer veya boolean ise JSON.stringify ve
+            JSON.parse metodlarına gerek yoktur.
+          </strong>
+        </p>
+        <p>
+          <strong>JSON.stringify(),</strong> herhangi bir Javascript nesnesini
+          alır ve onu string formatına çevirir.
+        </p>
+        <p>
+          <strong>JSON.parse(),</strong> string formatındaki veriyi javascript
+          object’e çevirir.
+        </p>
+        <br />
+        <h3>
+          5. Access Token Nasıl Alınır? Başka Bir Request’te Nasıl Kullanılır?
+        </h3>
+        <p>
+          Bir request’ten aşağıdaki gibi bir Response döndüğünü ve bizimde burda
+          bulunan access Token’ı alıp başka bir yerde kullanmamız gerektiğini
+          düşünelim. (Bu durum Postman ile API otomasyonu yazarken çok sık
+          rastlayacağımız bir durumdur.)
+        </p>
+        <img src="img/postman workflow/img-13.JPG" alt="" />
+        <br /><br />
+
+        <p>
+          Test sekmesine aşağıdaki kod parçasını yazarak 1. Satırda response’a
+          erişir. İkinci satırda ise accessToken’ı, token isimli değişkene
+          atarız.
+        </p>
+        <img src="img/postman workflow/img-14.JPG" alt="" />
+        <br /><br />
+
+        <p>
+          Ardından aşağıdaki gibi bu değişkeni global veya ortam(environment)
+          değişkenine atayarak başka request’ler için kullanabiliriz.
+        </p>
+
+        <img src="img/postman workflow/img-15.JPG" alt="" />
+        <br /><br />
+
+        <p>
+          Sonraki request’in header alanında kullanmak istersek aşağıdaki gibi
+          kullanabiliriz. (key-value)
+        </p>
+        <img src="img/postman workflow/img-16.JPG" alt="" />
+        <br /><br />
+        <p>
+          Bir sonraki yazımızda Postman’de Newman entegrasyonu üzerinde
+          duracağız.
+        </p>
+        <p>Herkese keyifli ve sağlıklı haftalar :)</p>
+        <br /><br />
+        <div class="author">
+          <p>Ozan ESER</p>
+        </div>
+        <div class="post-meta">
+          <a href="blog-9.html" class="post-category cat-2">Postman</a>
+          <span class="post-date" style="color: black;">13 Nisan, 2020</span>
+        </div>
+        <br /><br />
+        <div class="direction-buttons">
+          <a href="blog-8.html" class="previous">&#8617; Önceki</a>
+          <a href="blog-10.html" class="next">Sonraki &#8618;</a>
+        </div>
+        <div class="recommended-posts">
+          <div class="recomended-posts-header">
+            <h3>Benzer Yazılar</h3>
+          </div>
+          <div class="recommended-posts-body">
+            <div class="col-6 col-m-12 col-s-12">
+              <div class="recommended-post">
+                <a href="blog-10.html" class="recommended-post-img">
+                  <img src="img/postman newman/1_J7i_HLzYNG6UPtaaS6T8LQ.png" alt="" />
+                </a>
+                <div class="recommended-post-body">
+                  <div class="post-meta">
+                    <a href="blog-10.html" class="post-category cat-2"
+                      >Postman</a
+                    >
+                  </div>
+                  <h3 class="post-title">
+                    <a href="blog-10.html"
+                      >Postman ile Backend API Otomasyonunda Newman Entegrasyonu
+                      ve Html Reporter
+                    </a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-m-12 col-s-12">
+              <div class="recommended-post">
+                <a href="blog-8.html" class="recommended-post-img">
+                  <img
+                    src="img/Postman ile Backend API Otomasyonunda Dinamik Değişkenler/img-1.png"
+                    alt=""
+                  />
+                </a>
+                <div class="recommended-post-body">
+                  <div class="post-meta">
+                    <a href="blog-8.html" class="post-category cat-2"
+                      >Postman</a
+                    >
+                  </div>
+                  <h3 class="post-title">
+                    <a href="blog-8.html"
+                      >Postman ile Backend API Otomasyonunda Dinamik Değişkenler
+                    </a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+    <!-- /section -->
+
+    <!-- Footer -->
+    <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="first-row">
+          <div class="col-6 col-s-12 col-m-6">
+            <h6>Hakkımızda</h6>
+            <p>
+              YazilimTestOtomasyonu.com
+              <strong>Yazılım Test Yaklaşımları ve Otomasyonu </strong>hakkında bilinmesi
+              gerekenlerin doğru adresi.
+            </p>
+          </div>
+
+          <div class="col-3 col-s-12 col-m-3">
+            <h6>Kategoriler</h6>
+            <ul class="footer-links">
+              <li><a href="softwaretesting.html">Yazılım Testi</a></li>
+              <li><a href="jmeter.html">Jmeter</a></li>
+              <li><a href="postman.html">Postman</a></li>
+              <li><a href="#">Cucumber</a></li>
+              <li><a href="#">SOAP UI</a></li>
+            </ul>
+          </div>
+
+          <div class="col-3 col-s-12 col-m-3">
+            <h6>Hızlı Erişimler</h6>
+            <ul class="footer-links">
+              <li><a href="#">Yazarlarımız</a></li>
+              <li><a href="contactus.html">Bize Ulaşın</a></li>
+              <li><a href="#">Kaynaklar</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="second-row">
+          <div class="col-m-8 col-s-6 col-8">
+            <p class="copyright-text">
+              Copyright &copy; 2020 All Rights Reserved by
+              YazilimTestOtomasyonu.com
+            </p>
+          </div>
+
+          <div class="col-m-4 col-s-6 col-4">
+            <ul class="social-icons">
+              <li>
+                <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+              </li>
+              <li>
+                <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- /Footer -->
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

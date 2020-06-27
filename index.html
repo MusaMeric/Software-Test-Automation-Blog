@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Keywords"
+      content="Postman, JMeter, Yazılım Test, Yazılım Test Otomasyonu, Postman Backend Otomasyonu, Backend API Otomasyonu, JMeter Performans Testi, JMeter Yük Testi, Assertion, Jmeter Config Element"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="icon" href="img/icon2.png" type="image/ico" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>Yazılım Test Otomasyonu</title>
+  </head>
+  <body>
+    <!-- Scroll To Top Button -->
+    <button onclick="scrollToTop()" id="scrollToTop" title="Yukarı çık">
+      Yukarı Çık
+    </button>
+    <!-- /Scroll To Top Button -->
+
+    <!-- Off-Canvas Menu -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="hakkımızda.html">Hakkımızda</a>
+      <a href="#bizekatil">Bize Katıl</a>
+      <a href="#iletisim">İletişim</a>
+    </div>
+    <!-- /Off-Canvas Menu -->
+    <!-- Header -->
+    <header id="header">
+      <!-- Nav -->
+      <div id="nav">
+        <div class="container">
+          <!-- Logo -->
+          <div class="nav-logo">
+            <a href="index.html">
+              <img
+                src="img/icon2.png"
+                alt="Anasayfaya git"
+                width="50"
+                height="50"
+              />
+            </a>
+          </div>
+          <!-- /Logo -->
+          <!-- Nav-Menu -->
+          <div class="nav-menu">
+            <a href="index.html" class="nav-items active">Anasayfa</a>
+            <a href="#newest" class="nav-items">En Yeniler</a>
+            <a href="#softwareTesting" class="nav-items nav-res">Yazılım Testi</a>
+            <a href="#postman" class="nav-items nav-res">Postman</a>
+            <a href="#jmeter" class="nav-items nav-res">JMeter</a>
+            <div class="dropdown">
+              <button onclick="clickableDropdown()" class="dropbtn nav-items">
+                Daha Fazlası <i class="fa fa-caret-down"></i>
+              </button>
+              <div id="clickable-content" class="dropdown-content">
+                <a href="jmeter.html">JMeter</a>
+                <a href="postman.html">Postman</a>
+                <a href="softwaretesting.html">Yazılım Testi</a>
+              </div>
+            </div>
+          </div>
+          <!-- /Nav-Menu -->
+
+          <!-- Off-Canvas Menu -->
+          <div class="nav-btns">
+            <button class="aside-btn" onclick="openNav()">
+              <i class="fa fa-bars" style="color: #19c6ca;"></i>
+            </button>
+          </div>
+          <!-- Off-Canvas Menu -->
+        </div>
+      </div>
+      <!-- /Nav-->
+    </header>
+    <!-- /Header -->
+
+    <!-- section -->
+    <div class="section">
+      <div class="container">
+        <div class="recent-post" id="newest">
+          <div class="recent-post-header">
+            <h3>Yakında Zamanda Paylaşılanlar</h3>
+          </div>
+          <div class="recent-post-body">
+            <div class="recent-post-first-row">
+              <div class="col-6 col-m-12 col-s-12">
+                <div class="post">
+                  <a href="blog-16.html" class="post-img">
+                    <img
+                      src="img/jmeterHtmlReporter/jmeterhtmlreporter.png"
+                      alt=""
+                    />
+                  </a>
+                  <div class="post-body">
+                    <div class="post-meta">
+                      <a href="blog-16.html" class="post-category cat-1"
+                        >JMeter</a
+                      >
+                      <span class="post-date">26 Mayıs, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-16.html"
+                        >JMeter ile HTML Reporter Kullanımı</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-m-12 col-s-12">
+                <div class="post">
+                  <a href="blog-15.html" class="post-img">
+                    <img
+                      src="img/jmeter config element/config elmnt.jpg"
+                      alt=""
+                    />
+                  </a>
+                  <div class="post-body">
+                    <div class="post-meta">
+                      <a href="blog-15.html" class="post-category cat-1"
+                        >JMeter</a
+                      >
+                      <span class="post-date">15 Mayıs, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-15.html"
+                        >JMeter Performans Testlerinde Config Element
+                        Kullanımı</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="recent-post-second-row">
+              <div class="col-6 col-m-12 col-s-12">
+                <div class="post">
+                  <a href="blog-10.html" class="post-img">
+                    <img
+                      src="img/postman newman/1_J7i_HLzYNG6UPtaaS6T8LQ.png"
+                      alt=""
+                    />
+                  </a>
+                  <div class="post-body">
+                    <div class="post-meta">
+                      <a href="blog-10.html" class="post-category cat-2"
+                        >Postman</a
+                      >
+                      <span class="post-date">25 Nisan, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-10.html"
+                        >Postman ile Backend API Otomasyonunda Newman
+                        Entegrasyonu ve Html Reporter</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-m-12 col-s-12">
+                <div class="post">
+                  <a href="blog-4.html" class="post-img">
+                    <img
+                      src="img/yazılım test seviyeleri/1_YC4r9Uj6Kn3cHXI1GguJ0A.png"
+                      alt=""
+                    />
+                  </a>
+                  <div class="post-body">
+                    <div class="post-meta">
+                      <a href="blog-4.html" class="post-category cat-3"
+                        >Yazılım Testi</a
+                      >
+                      <span class="post-date">1 Mart, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-4.html">Yazılım Test Seviyeleri</a>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="stest-post" id="softwareTesting">
+          <div class="stest-post-header">
+            <h3>Yazılım Testi</h3>
+          </div>
+          <div class="stest-post-body">
+            <div class="stest-post-first-row">
+              <div class="col-4 col-m-12 col-s-12">
+                <div class="post-v3">
+                  <a href="blog-4.html" class="post-img">
+                    <img
+                      src="img/yazılım test seviyeleri/1_YC4r9Uj6Kn3cHXI1GguJ0A.png"
+                      alt=""
+                    />
+                  </a>
+                  <div class="post-body-v3">
+                    <div class="post-meta">
+                      <a href="blog-4.html" class="post-category cat-3"
+                        >Yazılım Testi</a
+                      >
+                      <span class="post-date">1 Mart, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-4.html">Yazılım Test Seviyeleri</a>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 col-m-12 col-s-12">
+                <div class="post-v3">
+                  <a href="blog-3.html" class="post-img">
+                    <img src="img/yazılım test efsaneleri/img-1.jpeg" alt="" />
+                  </a>
+                  <div class="post-body-v3">
+                    <div class="post-meta">
+                      <a href="blog-3.html" class="post-category cat-3"
+                        >Yazılım Testi</a
+                      >
+                      <span class="post-date">12 Şubat, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-3.html"
+                        >Yazılım Test Efsaneleri vs Prensipleri</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 col-m-12 col-s-12">
+                <div class="post-v3">
+                  <a href="blog-2.html" class="post-img">
+                    <img
+                      src="img/yazılım kalite ve teste bakış/img-1.jpeg"
+                      alt=""
+                    />
+                  </a>
+                  <div class="post-body-v3">
+                    <div class="post-meta">
+                      <a href="blog-2.html" class="post-category cat-3"
+                        >Yazılım Testi</a
+                      >
+                      <span class="post-date">10 Ocak, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-2.html">Yazılım, Kalite ve Teste Bakış</a>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stest-post-second-row">
+              <div class="col-4 col-m-12 col-s-12">
+                <div class="post-v3">
+                  <a href="blog-1.html" class="post-img">
+                    <img
+                      src="img/Yazılım Testine Genel Bakış/img-1.png"
+                      alt=""
+                    />
+                  </a>
+                  <div class="post-body-v3">
+                    <div class="post-meta">
+                      <a href="blog-1.html" class="post-category cat-3"
+                        >Yazılım Testi</a
+                      >
+                      <span class="post-date">1 Ocak, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-1.html">Yazılım Testine İlk Adım </a>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 col-m-6 col-s-12"></div>
+              <div class="col-4 col-m-6 col-s-12"></div>
+            </div>
+          </div>
+        </div>
+        <div class="postman-post" id="postman">
+          <div class="postman-post-header">
+            <h3>Postman</h3>
+          </div>
+          <div class="postman-post-body">
+            <div class="postman-post-first-row">
+              <div class="col-4 col-m-12 col-s-12">
+                <div class="post-v3">
+                  <a href="blog-10.html" class="post-img">
+                    <img
+                      src="img/postman newman/1_J7i_HLzYNG6UPtaaS6T8LQ.png"
+                      alt=""
+                    />
+                  </a>
+                  <div class="post-body-v3">
+                    <div class="post-meta">
+                      <a href="blog-10.html" class="post-category cat-2"
+                        >Postman</a
+                      >
+                      <span class="post-date">25 Nisan, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-10.html"
+                        >Postman ile Backend API Otomasyonunda Newman
+                        Entegrasyonu ve Html Reporter</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 col-m-12 col-s-12">
+                <div class="post-v3">
+                  <a href="blog-9.html" class="post-img">
+                    <img src="img/postman workflow/img-1.png" alt="" />
+                  </a>
+                  <div class="post-body-v3">
+                    <div class="post-meta">
+                      <a href="blog-9.html" class="post-category cat-2"
+                        >Postman</a
+                      >
+                      <span class="post-date">13 Nisan, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-9.html"
+                        >Postman ile Backend API Otomasyonunda İş Akışları
+                        (Workflows)</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 col-m-12 col-s-12">
+                <div class="post-v3">
+                  <a href="blog-8.html" class="post-img">
+                    <img
+                      src="img/Postman ile Backend API Otomasyonunda Dinamik Değişkenler/img-1.png"
+                      alt=""
+                    />
+                  </a>
+                  <div class="post-body-v3">
+                    <div class="post-meta">
+                      <a href="blog-8.html" class="post-category cat-2"
+                        >Postman</a
+                      >
+                      <span class="post-date">5 Nisan, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-8.html"
+                        >Postman ile Backend API Otomasyonunda Dinamik
+                        Değişkenler
+                      </a>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="postman-post-second-row">
+              <div class="col-4 col-m-12 col-s-12">
+                <div class="post-v3">
+                  <a href="blog-7.html" class="post-img">
+                    <img
+                      src="img/Postman ile Backend API Otomasyonunda Kod Mimarisi/img-1.png"
+                      alt=""
+                    />
+                  </a>
+                  <div class="post-body-v3">
+                    <div class="post-meta">
+                      <a href="blog-7.html" class="post-category cat-2"
+                        >Postman</a
+                      >
+                      <span class="post-date">30 Mart, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-7.html"
+                        >Postman ile Backend API Otomasyonunda Kod Mimarisi</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 col-m-12 col-s-12">
+                <div class="post-v3">
+                  <a href="blog-6.html" class="post-img">
+                    <img
+                      src="img/Postman Kurulum ve Arayüzü Hakkında Ön İzleme/img-5.jpeg"
+                      alt=""
+                    />
+                  </a>
+                  <div class="post-body-v3">
+                    <div class="post-meta">
+                      <a href="blog-6.html" class="post-category cat-2"
+                        >Postman</a
+                      >
+                      <span class="post-date">22 Mart, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-6.html"
+                        >Postman Kurulum ve Arayüzü Hakkında Ön İzleme
+                      </a>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 col-m-12 col-s-12">
+                <div class="post-v3">
+                  <a href="blog-5.html" class="post-img">
+                    <img
+                      src="img/Postman ile Backend API Otomasyonuna İlk Adım/img-2.png"
+                      alt=""
+                    />
+                  </a>
+                  <div class="post-body-v3">
+                    <div class="post-meta">
+                      <a href="blog-5.html" class="post-category cat-2"
+                        >Postman</a
+                      >
+                      <span class="post-date">16 Mart, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-5.html"
+                        >Postman ile Backend API Otomasyonuna İlk Adım</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="jmeter-post" id="jmeter">
+          <div class="jmeter-post-header">
+            <h3>JMeter</h3>
+          </div>
+          <div class="jmeter-post-body">
+            <div class="jmeter-post-first-row">
+              <div class="col-4 col-m-12 col-s-12">
+                <div class="post-v3">
+                  <a href="blog-16.html" class="post-img">
+                    <img
+                      src="img/jmeterHtmlReporter/jmeterhtmlreporter.png"
+                      alt=""
+                    />
+                  </a>
+                  <div class="post-body-v3">
+                    <div class="post-meta">
+                      <a href="blog-16.html" class="post-category cat-1"
+                        >JMeter</a
+                      >
+                      <span class="post-date">26 Mayıs, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-16.html"
+                        >JMeter ile HTML Reporter Kullanımı
+                      </a>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 col-m-12 col-s-12">
+                <div class="post-v3">
+                  <a href="blog-15.html" class="post-img">
+                    <img
+                      src="img/jmeter config element/config elmnt.jpg"
+                      alt=""
+                    />
+                  </a>
+                  <div class="post-body-v3">
+                    <div class="post-meta">
+                      <a href="blog-15.html" class="post-category cat-1"
+                        >JMeter</a
+                      >
+                      <span class="post-date">15 Mayıs, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-15.html"
+                        >JMeter Performans Testlerinde Config Element Kullanımı
+                      </a>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 col-m-12 col-s-12">
+                <div class="post-v3">
+                  <a href="blog-14.html" class="post-img">
+                    <img
+                      src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-1.png"
+                      alt=""
+                    />
+                  </a>
+                  <div class="post-body-v3">
+                    <div class="post-meta">
+                      <a href="blog-14.html" class="post-category cat-1"
+                        >JMeter</a
+                      >
+                      <span class="post-date">8 Mayıs, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-14.html"
+                        >JMeter Performans Testlerinde Assertion Kullanımı ve
+                        Performans Maliyetleri
+                      </a>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="jmeter-post-second-row">
+              <div class="col-4 col-m-12 col-s-12">
+                <div class="post-v3">
+                  <a href="blog-13.html" class="post-img">
+                    <img
+                      src="img/JMeter ile İlk Performans Testi/img-1.png"
+                      alt=""
+                    />
+                  </a>
+                  <div class="post-body-v3">
+                    <div class="post-meta">
+                      <a href="blog-13.html" class="post-category cat-1"
+                        >JMeter</a
+                      >
+                      <span class="post-date">30 Nisan, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-13.html"
+                        >JMeter ile İlk Performans Testi
+                      </a>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 col-m-12 col-s-12">
+                <div class="post-v3">
+                  <a href="blog-12.html" class="post-img">
+                    <img
+                      src="img/JMeter Kurulum ve Farklı Çalıştırma Modları/img-1.png"
+                      alt=""
+                    />
+                  </a>
+                  <div class="post-body-v3">
+                    <div class="post-meta">
+                      <a href="blog-12.html" class="post-category cat-1"
+                        >JMeter</a
+                      >
+                      <span class="post-date">25 Nisan, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-12.html"
+                        >JMeter Kurulum ve Farklı Çalıştırma Modları</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 col-m-12 col-s-12">
+                <div class="post-v3">
+                  <a href="blog-11.html" class="post-img">
+                    <img
+                      src="img/JMeter ile Performans Testine İlk Adım/img-1.jpeg"
+                      alt=""
+                    />
+                  </a>
+                  <div class="post-body-v3">
+                    <div class="post-meta">
+                      <a href="blog-11.html" class="post-category cat-1"
+                        >JMeter</a
+                      >
+                      <span class="post-date">20 Nisan, 2020</span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="blog-11.html"
+                        >JMeter ile Performans Testine İlk Adım
+                      </a>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /section -->
+
+    <!-- Footer -->
+    <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="first-row">
+          <div class="col-6 col-s-12 col-m-6">
+            <h6>Hakkımızda</h6>
+            <p>
+              YazilimTestOtomasyonu.com
+              <strong>Yazılım Test Yaklaşımları ve Otomasyonu </strong>hakkında bilinmesi
+              gerekenlerin doğru adresi.
+            </p>
+          </div>
+
+          <div class="col-3 col-s-12 col-m-3">
+            <h6>Kategoriler</h6>
+            <ul class="footer-links">
+              <li><a href="softwaretesting.html">Yazılım Testi</a></li>
+              <li><a href="jmeter.html">Jmeter</a></li>
+              <li><a href="postman.html">Postman</a></li>
+              <li><a href="#">Cucumber</a></li>
+              <li><a href="#">SOAP UI</a></li>
+            </ul>
+          </div>
+
+          <div class="col-3 col-s-12 col-m-3">
+            <h6>Hızlı Erişimler</h6>
+            <ul class="footer-links">
+              <li><a href="#">Yazarlarımız</a></li>
+              <li><a href="contactus.html">Bize Ulaşın</a></li>
+              <li><a href="#">Kaynaklar</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="second-row">
+          <div class="col-m-8 col-s-6 col-8">
+            <p class="copyright-text">
+              Copyright &copy; 2020 All Rights Reserved by
+              YazilimTestOtomasyonu.com
+            </p>
+          </div>
+
+          <div class="col-m-4 col-s-6 col-4">
+            <ul class="social-icons">
+              <li>
+                <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+              </li>
+              <li>
+                <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- /Footer -->
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

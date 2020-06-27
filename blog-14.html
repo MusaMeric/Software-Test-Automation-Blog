@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Keywords"
+      content="Postman, JMeter, Yazılım Test, Yazılım Test Otomasyonu, Postman Backend Otomasyonu, Backend API Otomasyonu, JMeter Performans Testi, JMeter Yük Testi, Assertion, Jmeter Config Element"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="icon" href="img/icon2.png" type="image/ico" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>Yazılım Test Otomasyonu</title>
+  </head>
+
+  <body>
+    <!-- Scroll To Top Button -->
+    <button onclick="scrollToTop()" id="scrollToTop" title="Yukarı çık">
+      Yukarı Çık
+    </button>
+    <!-- /Scroll To Top Button -->
+
+    <!-- Off-Canvas Menu -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="hakkımızda.html">Hakkımızda</a>
+      <a href="#bizekatil">Bize Katıl</a>
+      <a href="#iletisim">İletişim</a>
+    </div>
+    <!-- /Off-Canvas Menu -->
+    <!-- Header -->
+    <header id="header">
+      <!-- Nav -->
+      <div id="nav">
+        <div class="container">
+          <!-- Logo -->
+          <div class="nav-logo">
+            <a href="index.html">
+              <img
+                src="img/icon2.png"
+                alt="Anasayfaya git"
+                width="50"
+                height="50"
+              />
+            </a>
+          </div>
+          <!-- /Logo -->
+          <!-- Nav-Menu -->
+          <div class="nav-menu">
+            <a href="index.html" class="nav-items">Anasayfa</a>
+            <a href="softwaretesting.html" class="nav-items nav-res"
+              >Yazılım Testi</a
+            >
+            <a href="postman.html" class="nav-items nav-res">Postman</a>
+            <a href="jmeter.html" class="nav-items active">JMeter</a>
+            <div class="dropdown">
+              <button onclick="clickableDropdown()" class="dropbtn nav-items">
+                Daha Fazlası <i class="fa fa-caret-down"></i>
+              </button>
+              <div id="clickable-content" class="dropdown-content">
+                <a href="jmeter.html">JMeter</a>
+                <a href="postman.html">Postman</a>
+                <a href="softwaretesting.html">Yazılım Testi</a>
+              </div>
+            </div>
+          </div>
+          <!-- /Nav-Menu -->
+
+          <!-- Off-Canvas Menu -->
+          <div class="nav-btns">
+            <button class="aside-btn" onclick="openNav()">
+              <i class="fa fa-bars" style="color: #19c6ca;"></i>
+            </button>
+          </div>
+          <!-- Off-Canvas Menu -->
+        </div>
+      </div>
+      <!-- /Nav-->
+    </header>
+    <!-- /Header -->
+
+    <!-- section -->
+    <div class="section">
+      <div class="container-blog">
+        <h2>
+          JMeter Performans Testlerinde Assertion Kullanımı ve Performans
+          Maliyetleri
+        </h2>
+        <p>Herkese merhaba,</p>
+        <p>
+          Bir önceki yazımızda basit bir JMeter performans testi oluşturarak
+          test sonuçlarımızı yorumlamıştık. Fakat kullandığımız HTTP
+          sampler’larımızı doğrulamamıştık. İyi bir JMeter performans testinin
+          kilit noktası, belirli yük altıdayken uygulamadan gelen response’un
+          test mühendisinin belirttiği kriterlere uyup uymadığını
+          doğrulayabilmesidir. Örneğin; response code’un 200 olup olmadığını
+          kontrol edebiliriz. JMeter bu amaçla test mühendislerinin kullanımına
+          assertion’ları sunmuştur. Bu yazımızda Jmeter’da kullanılan
+          assertion’lar ve bu assertion’lara ait performans maliyetlerinden
+          bahsedeceğiz.
+        </p>
+        <p>Hadi başlayalım.</p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-1.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          JMeter, dünyadaki en popüler açık kaynaklı performans test aracı
+          olarak karşımıza çıkmaktadır. Yaygın olarak benimsenmesinin ana
+          nedenlerinden biri esnekliğidir. İyi bir JMeter performans testinin
+          kilit noktası, belirli yük altıdayken uygulamadan gelen response’un
+          test mühendisinin belirttiği kriterlere uyup uymadığını
+          doğrulayabilmesidir. JMeter bu amaca ulaşmak için test mühendislerinin
+          kullanımına assertion’ları sunmuştur. Aslında assertion’lar test
+          otomasyonuyla ilgilenen herkesin yakından bildiği bir kavramdır.
+          JMeter’da kullanılan her assertion farklı bir sonucu kontrol etmek
+          için yaratılır. Her JMeter kullanıcısı, tüm assertion’ların ne zaman
+          ve nasıl kullanılacağını bilmelidir. Ayrıca bu assertion’lar
+          kullanıldığı zaman nasıl bir performans maliyetine sebep olduğunu iyi
+          anlamalıdır. Çünkü kullanılan her assertion test performansımızı
+          belirli oranda olumsuz etkilemektedir. Tabi ki hepsi farklı oranda :)
+        </p>
+        <p>
+          Performans testi komut dosyalarında, server’dan alınan response’un
+          doğru olup olmadığı ve server’daki yükün artırılmasından etkilenip
+          etkilenmediğini doğrulamak için assertion’lara ihtiyaç duyar.
+          Assertion’lar ayrıca, gerçek ve beklenen sonucu karşılaştırarak farklı
+          türdeki uygulamaların fonksiyonel (functional) testlerinin
+          yapılmasında da kullanılır.
+        </p>
+        <p>
+          Assertion’lar, uygulama performansı hakkında hızlı geri bildirim
+          sağlamaktadır. Hızlı geri bildirim özelliği sayesinde, bir hata
+          meydana geldiğinde bizi uyarır. Böylece hatanın kök nedeni belirleme
+          işlemini başlatmamıza olanak sağlar.
+          <strong
+            >Assertion’lar doğru bir şekilde uygulanmadığında uygulamanın
+            performansı hakkında tutarsız veya hatalı geri bildirimler verir.
+          </strong>
+        </p>
+        <p>
+          Aşağıda JMeter performans testlerimizin doğruluğunu ve kalitesini
+          artırmak için kullanılan JMeter assertion türlerini ne zaman, nasıl
+          kullanacağımızı ve bu türlere ait performans maliyetlerini
+          öğreneceğiz.
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-2.png"
+          alt=""
+        />
+        <br /><br />
+        <h3>1. JMeter -Assertion Genel Kullanım Mantığı</h3>
+        <p>
+          Programlama dillerinde assertion’larla gerçekleşmesi beklenen koşul
+          belirlenir ve beklenen koşul dışındaki değerlerde
+          <strong>Assertion Failure</strong> durumu oluşur ve akış kesilerek
+          hatadan haberdar olunur.
+        </p>
+        <p>
+          <strong
+            >Assertion, JMeter içinde server’a gönderilen request’lerin
+            response’larını valide etmek için kullanılır. Assertion, beklenen
+            sonucun (expected result) request’in runtime’daki gerçek sonucuyla
+            doğruladığımız bir işlemdir. JMeter’da belirli bir sampler ve
+            subsampler’lara assertion ekleyerek bunu gerçekleştirebiliriz. Hatta
+            assertion’ları JMeter değişkenlerine de uygulayabiliriz. Ayrıca
+            Thread group’a Assertion Listener ekleyerek sonuçları
+            görüntüleyebiliriz. Başarısız(fail) olan caseler diğer tüm
+            listener’lar tarafından da görüntülenir. Bu hususa dikkat edilmesi
+            gerekmektedir.</strong
+          >
+          Yazının ilerleyen bölümünde zaten bu noktalara değineceğiz.
+        </p>
+        <br />
+        <h3>2. Assertion Kullanımında Genel Konsept</h3>
+        <p>
+          Aşağıda JMeter tarafından desteklenen assertion tiplerine ait genel
+          konsepti öğreneceğiz. Genel konsept içerisinde bu assertion tiplerinin
+          ortak scope’undan, kullanım yerlerinden, performans etkilerinden
+          (memory ve cpu kullanımı) ve assertion sonuçlarını nasıl
+          gözlemleyebileceğimizden bahsedeceğiz. Yani bu bölüm tüm
+          assertion’lara ait ortak kavramları ele alacağız.
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-3.png"
+          alt=""
+        />
+        <br /><br />
+        <h3>2.1. Assertion Scope (Kapsam) Nedir?</h3>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-4.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          <strong>Assertion scope</strong>, assertion’ın hangi sampler
+          response’larına uygulanacağını tanımladığımız alandır. Assertion’ları
+          ayarlarken kapsamı göz önünde bulundurmalıyız. Bir sampler’a ve
+          subsampler’a veya yalnızca subsampler’lara assertion uygulanabilir.
+          Ayrıca “Response Assertion” veya “Size Assertion” gibi bazı
+          assertion’lar JMeter değişkenlerine karşı da kullanılabilir.
+        </p>
+        <p>
+          Peki assertion’larımızı hangi kapsamda kullanmalıyız? Çoğu durumda
+          sadece <strong>Sampler</strong> seçeneğini kullanmak isteriz. Nadiren
+          assertion’lar hem sampler hem de subsampler response’larına da
+          uygulanır.
+        </p>
+        <p>
+          Yukarıdaki görselde bulunan her alanın ne anlama geldiği aşağıda
+          açıklanmıştır.
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-5.JPG"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Sampler, controller, thread group veya test planına birden fazla
+          assertion ekleyebiliriz. Fail(başarısız) olan assertion’lar, etkilenen
+          tüm sampler’ların fail olmasına neden olur, bu nedenle dikkatli
+          olmalıyız.
+        </p>
+        <br />
+        <h3>2.2. Assertion Nerede Kullanılır?</h3>
+        <p>
+          <strong>Assertion’lar özel bir tür Post-Processors’dır.</strong>
+          Assertion’lar aynı seviyede veya altında tanımlandıkları sampler’lar
+          için geçerlidir.
+        </p>
+        <p>
+          Ne demek istediğimizi anlamak için aşağıdaki örnekleri yorumlayalım.
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-6.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Yukarıda Http Request -1 sampler’ı altında bulunan assertion yalnızca
+          Http Request -1 için geçerlidir.
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-7.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Yukarıdaki 2 görselde ise assertion 3 sampler için de geçerlidir.
+          Testinize bir assertion listener ekleyerek bu durumu
+          deneyimleyebilirsiniz.
+        </p>
+        <p>
+          Bu konu hakkında verebileceğim en iyi tavsiye şudur: Assertionları
+          kullanırken basit tutmalıyız. Assertion’ları sampler’ların altında
+          tanımlayarak komplekslikten kaçınmalıyız.
+          <strong
+            >Ne kadar kolay anlaşılırsa, hazırladığımız performans testi komut
+            dosyası o kadar sürdürülebilir olur.</strong
+          >
+        </p>
+        <br />
+        <h3>2.3. Assertion Performans Maliyeti Nedir?</h3>
+        <p>
+          Tüm assertion’lar, CPU veya memory tüketimi açısından bir maliyete
+          sebep olmaktadır. Bununla birlikte, bazı assertion’lar diğerlerinden
+          daha fazla maliyete sebep olur. Örneğin; “Response Assertion” ve
+          “Duration Assertion” daha az CPU ve memory tüketirken “Compare
+          Assertion” ve XML tabanlı olan “XPath Assertion” daha fazla CPU ve
+          memory tüketmektedir.
+        </p>
+        <p>
+          JMeter’ı büyük ölçekli testlerde optimize etmek için yapabiliceğimiz
+          şeylerden biri assertion kullanımı konusunda dikkatli olmaktır.
+          <strong>CPU/Memory kullanımının yüksek gittiğini görüyorsak</strong>
+          yük testi sırasında var olan assertion’lardan bazılarını disable moda
+          çekebiliriz.
+          <strong
+            >Çoğu assertion’ın ciddi oranda CPU ve memory tükettiğini
+            bilmeliyiz.</strong
+          >
+          Aşağıdaki tablo, her bir assertion türünün ne kadar kaynak(resource)
+          tükettiğini gözlemleyebilirsiniz.
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-8.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Yukarıdaki tabloda her rengin bir anlamı vardır. Aşağıda bu renklerin
+          ne anlama geldiğini açıklıyorum.
+        </p>
+        <ol>
+          <li>
+            <strong>Low(Düşük) :</strong> Serbestçe kullanılabilir, performans
+            yükü çok düşüktür.
+          </li>
+          <li>
+            <strong>Moderate(Orta) :</strong> Bunları özellikle büyük server
+            response’larında (yüzlerce KB, birkaç MB gibi) az miktarda
+            kullanalım.
+          </li>
+          <li>
+            <strong>High(Yüksek) :</strong> Çoğunlukla sadece
+            <strong>fonksiyonel test</strong> veya çok hafif yük için uygundur
+            (10 eşzamanlı kullanıcıdan az).
+          </li>
+        </ol>
+        <br />
+        <h3>2.4. Assertion Results (Sonuçları)</h3>
+        <p>
+          Bir assertion’ın başarısız olup olmadığını görmenin çeşitli yolları
+          vardır. En yaygın olarak kullanılan yöntemler “Assertion Results” ve
+          “View Result Tree” listener’larını kullanmaktır. Elbette, JMeter
+          sonuçlarını analiz etmenin bir çok farklı yolu da var. Buna daha sonra
+          “JMeter HTML Reporter” yazımda deyineceğim.
+        </p>
+        <p>
+          Assertion Result listener’ını testimize ekleyerek test sonucunda
+          başarılı ve başarısız olan tüm assertion’larımızı gözlemleyebiliriz.
+          <strong
+            >Sadece ilgili sampler’ın isminin yazdığı caseler testin başarılı
+            olduğu anlamına gelir. Assertion ile ilgili bir uyarı mesajı
+            görüyorsak o testin başarısız olduğu anlamına gelmektedir.</strong
+          >
+        </p>
+        <p>
+          Aşağıda response time 650 ms belirlenmiştir. 650 ms daha geç response
+          veren request’ler için ekranda hata mesajı oluşmuştur. 650ms
+          içerisinde response veren request’lere ait sadece sampler ismi ekrana
+          yazılmıştır.
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-9.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          View Result Tree listener’ını testimize ekleyerek test sonucunda
+          başarılı ve başarısız olan tüm assertion’larımızı gözlemleyebiliriz.
+          <strong>Kırmızı</strong> ile gösterilen sonuçlar
+          <strong>başarısız</strong> olan caseleri, <strong>yeşil</strong> ile
+          gösterilenler ise <strong>başarılı</strong> olan caseleri temsil
+          etmektedir.
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-10.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Assertion’lara ait genel konseptten bahsettiğimize göre artık
+          assertion türlerini inceleyebiliriz.
+        </p>
+        <br />
+        <h3>3. Assertion Türleri</h3>
+        <br />
+        <h3>3.1. Response Assertion</h3>
+        <p>
+          Response assertion, bir veya daha fazla server response parametresine
+          ait değerleri doğrulamak için kullanılır. Response assertion
+          muhtemelen en çok kullanılan JMeter assertion’larından biridir.
+          <strong
+            >Bir response’a ait text/body/code/message/header gibi belirtilen
+            bir paterni içerip içermediğini (contains), eşleştiğini (matches)
+            veya ona eşit olup olmadığını(equals) doğrulamak için kullanılır.
+          </strong>
+        </p>
+        <p>
+          Response assertion; response field to test, pattern matching rules ve
+          patterns to test olmak üzere 3 ana bölümden oluşur.
+        </p>
+        <ol>
+          <li>
+            <strong>Field to test:</strong> Response’un hangi kısmına assertion
+            uygulanacağını belirlediğimiz alandır. Text response, response code,
+            document (text) vs.
+          </li>
+          <br />
+          <li>
+            <strong>Pattern Matching Rules:</strong> Belirtilen paterni
+            içerdiğini(contains), eşleştiğini (matches) veya eşit
+            olduğunu(equals) seçtiğimiz alandır.
+          </li>
+          <br />
+          <li>
+            <strong>Patterns to test:</strong> Test sonucunda beklediğimiz
+            değerleri ayarladığımız alandır.
+          </li>
+        </ol>
+        <p>
+          Aşağıda <strong>Response Code: 200</strong> beklenen bir assertion
+          örneği paylaşılmıştır.
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-11.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Aşağıda “Field to text” alanında bulunan seçenekleri daha
+          derinlemesine inceleyelim.
+        </p>
+        <ol>
+          <li>
+            <strong>Text Response:</strong> Tarayıcıda görüntülenebilecek
+            response için kullanılır. Örneğin; Google web sayfasını düşünürsek
+            “title” alanının “Google” değerini içerip içermediğini test etmek
+            isteyebiliriz.
+          </li>
+          <br />
+          <li>
+            <strong>Response Code:</strong> Response code’un beklenildiği gibi
+            olduğunu kontrol etmek için kullanılır. Eğer 4xx ve 5xx response
+            code’larını bekliyorsak bu code’lar için
+            <strong>“Ignore Status”</strong> seçeneğini işaretlemeliyiz
+            (Ayrıntılı açıklama aşağıdadır.).
+          </li>
+          <br />
+          <li>
+            <strong>Response Message:</strong> Response message’ın beklenildiği
+            gibi göründüğünü doğrulamak için kullanılır.
+          </li>
+          <br />
+          <li>
+            <strong>Response Header:</strong> Belirli bir HTTP başlığının mevcut
+            olup olmadığını doğrulamak için kullanılır.
+          </li>
+          <br />
+          <li>
+            <strong>URL Sampled:</strong> URL’in beklenilen URL ile eşleşip
+            eşleşmediğini doğrulamak için kullanılır. Örneğin, redirect URL’in,
+            path’in herhangi bir yerinde bir hata içerip içermediğini kontrol
+            etmek isteyebiliriz.
+          </li>
+          <br />
+          <li>
+            <strong>Document (text):</strong> Apache Tika tarafından desteklenen
+            PDF, office, ses ve video formatındaki dosyalar için kullanılabilir.
+            Kullanılması için JMeter /lib klasöründe apache-tika.jar dosyasının
+            kurulu olması gerekmektedir. Yüksek yükler için memory’yi yorabilir.
+          </li>
+          <br />
+          <li>
+            <strong>Ignore Status:</strong> JMeter 4xx ve 5xx response
+            code’larını hata olarak kabul eder. Eğer negatif bir case test
+            edeceksek “Ignore Status” seçeneğini işaretlemeliyiz (Örneğin;
+            Response code 404 bekleniyorsa).
+          </li>
+        </ol>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-12.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Response assertion başarısız olduğunda alınan hata mesajı aşağıdaki
+          gibidir. Aşağıda sırasıyla text response ve response code hataları
+          görülmektedir.
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-13.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Response assertion
+          <strong>en sık kullanılan assertion’dır.</strong> Bunun nedenini;
+          makul performans etkisi ve kolay kullanım olarak özetlenebilir.
+          <strong>Orta düzeyde CPU ve memory kullanmaktadır.</strong>
+        </p>
+        <br />
+        <h3>3.2. Duration Assertion</h3>
+        <p>
+          Duration Assertion, beklenilen maksimum response time değeridir.
+          Kullanımı çok basittir. Genellikle testlerde response assertion ile
+          birlikte kullanılır ve ihtiyaç duyulan caselerin %90'ını kapsarlar.
+          Milisaniye cinsinden maksimum süre belirlenir ve herhangi bir request
+          belirtilen değerden daha uzun sürerse, sampler başarısız olarak
+          belirtilir. Bir assertion’dan ziyade bir performans uyarısı olarak
+          düşünülebilir.
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-14.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Yukarıdaki görselde maksimum response time 800ms belirlenmiştir. 800
+          ms’den daha uzun süren request’ler hata verecektir.
+        </p>
+        <p>
+          Duration assertion başarısız olduğunda alınan hata mesajı aşağıdaki
+          gibidir:
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-15.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          <strong>Düşük CPU ve Memory kullanımı</strong> nedeniyle , bu
+          assertion yaygın olarak kullanılır.
+        </p>
+        <br />
+        <h3>3.3. Size Assertion</h3>
+        <p>
+          Response uzunluğunu byte cinsinden beklenen boyuta eşit(equal), eşit
+          değil(not equal), daha büyük (greater) veya daha küçük (less than)
+          olup olmadığını doğrulamak için kullanılır. 5 farklı alana
+          uygulanabilir. Bunlar; full response (body and headers), response
+          headers, response body, response code, response message.
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-16.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Ayrıca kullanımı çok basittir. Ben genellikle video veya müzik gibi
+          indirilen dosyaların boyutunu doğrulamak için kullanıyorum. Çünkü
+          dosyanın tamamen indirildiğinden emin olmak istiyorum.
+        </p>
+        <p>
+          Response boyutunu(size) kontrol etmenin en kolay yolu, “ View Results
+          Tree” listener’ını incelemektir. Burada size ile ilgili yer alan 3
+          parametre gözlenir. Bunlar: size in bytes, headers size in bytes ve
+          body size in bytes parametreleridir. Size in bytes, headers size in
+          bytes ve body size in bytes parametrelerinin toplam değeridir (Size in
+          bytes = Headers size in bytes + Body size in bytes).
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-17.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Size assertion başarısız olduğunda alınan hata mesajı aşağıdaki
+          gibidir. Hata byte cinsinden hem beklenen hem de gerçek response
+          boyutunu içerir.
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-18.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          <strong>Düşük CPU ve Memory</strong> kullanımı nedeniyle , bu
+          assertion yaygın olarak kullanılır.
+        </p>
+        <br />
+        <h3>3.4. Json Assertion</h3>
+        <p>
+          <strong>Bir JSON response’unu doğrulamamızı sağlar.</strong> Aşağıda
+          örnek bir json response verelim.
+          <a href="http://dummy.restapiexample.com/"
+            >http://dummy.restapiexample.com/</a
+          >
+          sitesinden aldığım dummy bir request’i çalıştırıyorum.
+        </p>
+        <p>
+          (url: http://dummy.restapiexample.com/api/v1/employees method:GET)
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-19.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          İlk objeye ait employee_name parametresinin olup olmadığını kontrol
+          etmek istediğimizi varsayalım.
+        </p>
+        <p>Öncelikle testimize bir Json Assertion ekleyelim.</p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-20.png"
+          alt=""
+        />
+        <br /><br />
+        <p>Daha sonra bu assertion’ı aşağıdaki gibi yapılandıralım.</p>
+        <ol>
+          <li><strong>Assert JsonPath Exists:</strong> $..employee_name,</li>
+          <br />
+          <li>
+            <strong>Additional Assert Value:</strong> İlgili alana ait Expected
+            Value girilecekse bu checkbox seçilir. Biz gireceğimiz için
+            seçiyoruz.
+          </li>
+          <br />
+          <li>
+            <strong>Expected Value:</strong> bu alana response’da yer alan
+            “Tiger Nixon” ismini yazıyoruz.
+          </li>
+        </ol>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-21.png"
+          alt=""
+        />
+        <br />
+        <br />
+        <p>
+          Testi koştuğumuzda bir hatayla karşılaşmadığımızı siz de
+          gözlemleyebilirsiniz.
+        </p>
+        <p>
+          Json assertion başarısız olduğunda alınan hata mesajı aşağıdaki
+          gibidir. Testinizde hatayı gözlemlemek için “Expected Value” alanına
+          kendi isminizi yazarak testinizi tekrar koşturabilirsiniz.
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-22.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Bu assertion <strong>yüksek</strong> CPU ve memory kullanımına
+          sahiptir. Çünkü
+          <strong>Json response’larını ayrıştırmaktadır.</strong> Bu nedenle
+          performans testlerinden ziyade backend API otomasyonu testlerinde
+          kullanılması tercih edilir.
+        </p>
+        <br />
+        <h3>3.5. HTML Assertion</h3>
+        <p>
+          HTML Assertion, JTidy (HTML Syntax Checker/HTML Sözdizimi
+          Denetleyicisi) kullanarak response’un HTML sözdizimini kontrol etmek
+          için kullanılır. Hatalı HTML sözdizimi olması durumunda testte
+          başarısız olur. Html dosyalarımızı valide etmek için iyi bir
+          seçenektir. Eğer beklediğimiz bir error veya warning varsa bunların
+          sayıları <strong>error threshold</strong> ve
+          <strong>warning threshold</strong> alanlarına yazılır ve test bu
+          şekilde koşulur. Böylece beklediğimiz hatalar dışında bir hata dönerse
+          bu hata konusunda bilgilendiriliriz.
+        </p>
+        <p>
+          <a href="https://medium.com/membership"
+            >https://medium.com/membership</a
+          >
+          sayfasını GET metodu ile inceleyerek durumu gözlemleyebiliriz.
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-23.png"
+          alt=""
+        />
+        <br /><br />
+        <p>
+          Tidy için .txt formatında bir dosyayı gösterdiğimizde karşılaştığımız
+          hatalara ait ayrıntılar bu dosyanın içine yazdırılacaktır. Sadece
+          hataları göstermek istersek error only seçeneği seçilebilir.
+        </p>
+        <img
+          src="img/JMeter Performans Testlerinde Assertion Kullanımı ve Performans Maliyetleri/img-24.png"
+          alt=""
+        />
+        <br /><br />
+        <p>XML ve XHTML dosyaları da benzer şekilde valide edilebilir.</p>
+        <p>
+          <strong>Yüksek</strong> CPU ve memory kullanımı nedeniyle performans
+          testlerinde bu assertion’dan kaçınılmalıdır.
+        </p>
+        <br />
+        <h3>3.6. XML Assertion</h3>
+        <p>
+          XML assertion, response’un
+          <strong>geçerli bir XML belgesi</strong> olup olmadığını doğrulamak
+          için kullanılır. Bu assertion’ın tek kullanım durumu budur.
+          <strong>Server response’un iyi biçimlendirildiğini</strong> kontrol
+          etmeniz gerektiğinde fonksiyonel testlerde yararlı olabilir.
+          <strong>Yüksek</strong> CPU ve memory kullanımı nedeniyle performans
+          testlerinde bu assertion’dan kaçınılmalıdır.
+        </p>
+        <br />
+        <h3>3.7. XML Schema Assertion</h3>
+        <p>
+          XML Schema assertion, belirli bir XML şemasına karşı response’u
+          doğrulamak için kullanılır. Şahsen daha önce hiç kullanmadım.
+        </p>
+        <p>
+          <strong>Yüksek</strong> CPU ve memory kullanımı nedeniyle
+          <strong>fonksiyonel test</strong> için uygundur.
+        </p>
+        <br />
+        <h3>3.8. XPath Assertion</h3>
+        <p>
+          XPath assertion, XPath ifadelerini kullanarak response’u doğrulamak
+          için kullanılır. Özellikle API testlerinde kullanılır ve SOAP
+          servisleri için uygundur.
+        </p>
+        <p>
+          Bu assertion <strong>yüksek</strong> CPU ve memory kullanımına
+          sahiptir. Çünkü
+          <strong>XML response’larını ayrıştırmaktadır.</strong> Performans
+          testlerinde bu assertion’dan kaçınılmalıdır.
+        </p>
+        <p>
+          Yukarıda sık kullanılan assertion’ların kullanımı ve performans
+          maliyetlerinden bahsettik. Unutulmamalıdır ki performans testi
+          yaparken, kritik ve sıklıkla gözden kaçan hususlardan biri yük altında
+          elde edilen sonuçları doğrulamaktır. Bu yüzden performans
+          testlerimizde kesinlike assertion kullanmalıyız.
+        </p>
+        <p>
+          Ayrıca performans testlerinde yapılan tipik bir hata, uygulamanın bir
+          request’e yanlış response döndürürken bunu 200 response kodu ile
+          göndermesidir. Bu gibi durumlar için response içerisinde yer alan bazı
+          paremetreleri de doğrulamalıyız. Bu sadece JMeter için değil başka
+          herhangi bir test aracı içinde geçerlidir.
+        </p>
+        <p>
+          Bir sonraki yazımızda görüşmek üzere. Herkese keyifli ve sağlıklı
+          haftalar :)
+        </p>
+        <br />
+        <br />
+
+        <div class="author">
+          <p>Ozan ESER</p>
+        </div>
+        <div class="post-meta">
+          <a href="blog-14.html" class="post-category cat-1">JMeter</a>
+          <span class="post-date" style="color: black;">8 Mayıs, 2020</span>
+        </div>
+        <br /><br />
+        <div class="direction-buttons">
+          <a href="blog-13.html" class="previous">&#8617; Önceki</a>
+          <a href="blog-15.html" class="next">Sonraki &#8618;</a>
+        </div>
+        <div class="recommended-posts">
+          <div class="recomended-posts-header">
+            <h3>Benzer Yazılar</h3>
+          </div>
+          <div class="recommended-posts-body">
+            <div class="col-6 col-m-12 col-s-12">
+              <div class="recommended-post">
+                <a href="blog-15.html" class="recommended-post-img">
+                  <img
+                    src="img/jmeter config element/config elmnt.jpg"
+                    alt=""
+                  />
+                </a>
+                <div class="recommended-post-body">
+                  <div class="post-meta">
+                    <a href="blog-15.html" class="post-category cat-1"
+                      >JMeter</a
+                    >
+                  </div>
+                  <h3 class="post-title">
+                    <a href="blog-15.html"
+                      >JMeter Performans Testlerinde Config Element Kullanımı
+                    </a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-m-12 col-s-12">
+              <div class="recommended-post">
+                <a href="blog-16.html" class="recommended-post-img">
+                  <img
+                    src="img/jmeterHtmlReporter/jmeterhtmlreporter.png"
+                    alt=""
+                  />
+                </a>
+                <div class="recommended-post-body">
+                  <div class="post-meta">
+                    <a href="blog-16.html" class="post-category cat-1"
+                      >JMeter</a
+                    >
+                  </div>
+                  <h3 class="post-title">
+                    <a href="blog-16.html"
+                      >JMeter ile HTML Reporter Kullanımı
+                    </a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+    <!-- /section -->
+
+    <!-- Footer -->
+    <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="first-row">
+          <div class="col-6 col-s-12 col-m-6">
+            <h6>Hakkımızda</h6>
+            <p>
+              YazilimTestOtomasyonu.com
+              <strong>Yazılım Test Yaklaşımları ve Otomasyonu </strong>hakkında
+              bilinmesi gerekenlerin doğru adresi.
+            </p>
+          </div>
+
+          <div class="col-3 col-s-12 col-m-3">
+            <h6>Kategoriler</h6>
+            <ul class="footer-links">
+              <li><a href="softwaretesting.html">Yazılım Testi</a></li>
+              <li><a href="jmeter.html">Jmeter</a></li>
+              <li><a href="postman.html">Postman</a></li>
+              <li><a href="#">Cucumber</a></li>
+              <li><a href="#">SOAP UI</a></li>
+            </ul>
+          </div>
+
+          <div class="col-3 col-s-12 col-m-3">
+            <h6>Hızlı Erişimler</h6>
+            <ul class="footer-links">
+              <li><a href="#">Yazarlarımız</a></li>
+              <li><a href="contactus.html">Bize Ulaşın</a></li>
+              <li><a href="#">Kaynaklar</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="second-row">
+          <div class="col-m-8 col-s-6 col-8">
+            <p class="copyright-text">
+              Copyright &copy; 2020 All Rights Reserved by
+              YazilimTestOtomasyonu.com
+            </p>
+          </div>
+
+          <div class="col-m-4 col-s-6 col-4">
+            <ul class="social-icons">
+              <li>
+                <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+              </li>
+              <li>
+                <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- /Footer -->
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
